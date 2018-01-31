@@ -69,7 +69,9 @@ ${
 
 ## Port Selection
 
-You can expose a HTTP service on **any port** of your choice (not multiple ones). ${<Now color="#000" />} will then route requests to your deployment to that port and visitors will see the rendered output of your application.
+You can expose an HTTP service on **any port** of your choice (not multiple ones). ${<Now color="#000" />} will then route requests to your deployment on that port from the port \`443\` and visitors will see the rendered output of your application.
+
+Aditionally visitors will be redirected from \`http\` to \`https\` automatically.
 
 ## Custom Node.js Configuration
 
