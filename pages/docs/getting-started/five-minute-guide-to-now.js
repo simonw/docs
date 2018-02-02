@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo, arunoda } from '../../../lib/data/team'
@@ -26,7 +27,7 @@ domain name of your choice and configure an SSL certificate.
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/installation/now-desktop.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/installation/now-desktop.png`)}
     width={550}
     height={380}
   />
@@ -75,7 +76,7 @@ ${<TerminalInput>now</TerminalInput>}
 ${<Now color="#000"/>} will deploy the app and give you a URL as shown below.
 
 ${<Image
-  src={`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/deploy.png`}
+  src={asset(`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/deploy.png`)}
   width={650}
   height={255}
   caption="Getting a unique URL after the deployment."
@@ -109,7 +110,7 @@ Once you've done that, you'll be able to access your app using <https://my-web-a
 It is automatically configured with a [Let's Encrypt](https://letsencrypt.org/) SSL certificate and served with HTTPS.
 
 ${<Image
-  src={`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/domain-setup.png`}
+  src={asset(`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/domain-setup.png`)}
   width={650}
   height={412}
   caption="After mapping a domain name to a deployment."

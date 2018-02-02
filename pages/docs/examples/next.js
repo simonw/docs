@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo } from '../../../lib/data/team'
@@ -103,7 +104,7 @@ This is how it should look:
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/next/running.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/next/running.png`)}
     width="550"
     height="309"
   />
@@ -113,7 +114,7 @@ You can now go to <http://localhost:3000> in your browser and see the rendered m
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/next/output.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/next/output.png`)}
     width="550"
     height="307"
   />

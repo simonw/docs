@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo } from '../../../lib/data/team'
@@ -88,7 +89,7 @@ Go to the URL returned (\`http://0.0.0.0:3000\`) and you should see something li
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/json-api/date.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/json-api/date.png`)}
     width="550"
     height="279"
   />
@@ -142,7 +143,7 @@ Assuming that you've followed this post to this point, you should now see able t
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/json-api/members.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/json-api/members.png`)}
     width="600"
     height="373"
   />

@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo } from '../../../lib/data/team'
@@ -52,7 +53,7 @@ Once ${<Now color="#000" />} fetches the repository, you'll see just what you're
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/git-repositories/slackin.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/git-repositories/slackin.png`)}
     width="550"
     height="420"
   />
