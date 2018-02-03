@@ -13,8 +13,8 @@ app.prepare().then(() => {
   const server = micro((req, res) => {
     // Add assetPrefix support based on the hostname
     if (req.headers.host === 'docs.zeit.sh') {
-      // TODO: Set a proper cloudinary custom origin URL
-      app.setAssetPrefix('')
+      // Set the cloudinary custom origin which points to https://docs.zeit.sh
+      app.setAssetPrefix('https://assets.zeit.co/raw/upload/docs-assets')
     } else if (/localhost/.test(req.headers.host)) {
       // Set the assetPrefix for localhost
       // It needs to be the http version
