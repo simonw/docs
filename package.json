@@ -1,6 +1,6 @@
 {
-  "name": "front",
-  "version": "3.9.1",
+  "name": "docs",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "dev": "node server.js",
