@@ -153,9 +153,9 @@ ${
 
 #### \`type\` (string)
 
-A field for specifying the deployment type ("node", "docker" or "static") if both \`package.json\` and \`Dockerfile\` exist. This will prevent \`now\` from asking you to choose the type in these cases.
+A field for specifying the deployment type ("npm", "docker" or "static") if both \`package.json\` and \`Dockerfile\` exist. This will prevent \`now\` from asking you to choose the type in these cases.
 
-${<Code>{`"type": "node"`}</Code>}
+${<Code>{`"type": "npm"`}</Code>}
 
 #### \`forwardNpm\` (boolean)
 
