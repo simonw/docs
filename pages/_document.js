@@ -8,7 +8,7 @@ const env = { API_URL, NOW_API_URL }
 export default class Document extends Document_ {
   static async getInitialProps(ctx) {
     const props = await Document_.getInitialProps(ctx)
-    const ua = String(ctx.req.headers['user-agent'])
+    const ua = String(ctx.req.headers && ctx.req.headers['user-agent'])
     return {
       ...props,
       isIE11: isIE11_(ua)

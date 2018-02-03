@@ -30,6 +30,12 @@ class API extends React.PureComponent {
   }
 
   static async getInitialProps({ req }) {
+    // We don't need to do any auth logic for static export
+    const isServer = typeof window === 'undefined'
+    if (isServer && !req.headers) {
+      return {}
+    }
+
     const { user } = await authenticate({ req })
     return { user }
   }
