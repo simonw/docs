@@ -11,6 +11,7 @@ import Logo from '../components/icons/logo'
 import Page from '../components/page'
 import sections from '../components/api/sections'
 import FreezePageScroll from '../components/freeze-page-scroll'
+import authenticate from '../lib/authenticate'
 import data from '../lib/data/api'
 import withAPI from '../lib/with-api'
 
@@ -26,6 +27,11 @@ class API extends React.PureComponent {
     this.observer = null
 
     this.onHashChange = this.onHashChange.bind(this)
+  }
+
+  static async getInitialProps({ req }) {
+    const { user } = await authenticate({ req })
+    return { user }
   }
 
   componentDidMount() {
@@ -94,8 +100,7 @@ class API extends React.PureComponent {
                 user={props.user}
                 pathname={props.url.pathname}
                 onLogout={() => {
-                  props.onUser(null)
-                  props.url.push('/login')
+                  Router.push('/login')
                 }}
                 onLogoRightClick={() => props.url.push('/logos')}
               />
