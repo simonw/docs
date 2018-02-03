@@ -12,13 +12,17 @@ const handleNextRequests = app.getRequestHandler()
 app.prepare().then(() => {
   const server = micro((req, res) => {
     // Add assetPrefix support based on the hostname
-    if (req.headers.host === 'docs.now.sh') {
+    if (req.headers.host === 'docs.zeit.sh') {
       // TODO: Set a proper cloudinary custom origin URL
       app.setAssetPrefix('')
-    } else {
-      // This is to support multi-zones support in localhost
-      // and may be in staging deployments
+    } else if (/localhost/.test(req.headers.host)) {
+      // Set the assetPrefix for localhost
+      // It needs to be the http version
       app.setAssetPrefix(`http://${req.headers.host}`)
+    } else {
+      // Set the assetPrefix for localhost
+      // It needs to be the https version, since now is always HTTPS
+      app.setAssetPrefix(`https://${req.headers.host}`)
     }
 
     handleNextRequests(req, res)
