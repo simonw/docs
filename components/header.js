@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
+// import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
 // Components
@@ -125,7 +125,7 @@ class Header extends React.PureComponent {
   }
 
   onLogoMouseEnter = () => {
-    Router.prefetch('/logos')
+    // Router.prefetch('/logos')
   }
 
   render() {
@@ -168,7 +168,6 @@ class Header extends React.PureComponent {
 
         <header className={clean ? 'clean' : null}>
           <Link
-            prefetch
             as={
               currentTeamSlug
                 ? `/teams/${currentTeamSlug}`
@@ -206,31 +205,31 @@ class Header extends React.PureComponent {
           >
             {!clean ? (
               <div className="nav left">
-                <Link prefetch href="/about">
+                <Link href="/about">
                   <a
                     className={'/about' === this.state.section ? 'active' : ''}
                   >
                     About
                   </a>
                 </Link>
-                <Link prefetch href="/blog">
+                <Link href="/blog">
                   <a className={'/blog' === this.state.section ? 'active' : ''}>
                     Blog
                   </a>
                 </Link>
-                <Link prefetch href="/now">
+                <Link href="/now">
                   <a className={'/now' === this.state.section ? 'active' : ''}>
                     Now
                   </a>
                 </Link>
-                <Link prefetch href="/world">
+                <Link href="/world">
                   <a
                     className={'/world' === this.state.section ? 'active' : ''}
                   >
                     World
                   </a>
                 </Link>
-                <Link prefetch href="/domains">
+                <Link href="/domains">
                   <a
                     className={
                       '/domains' === this.state.section ? 'active' : ''
@@ -239,22 +238,22 @@ class Header extends React.PureComponent {
                     Domains
                   </a>
                 </Link>
-                <Link prefetch href="/api">
+                <Link href="/api">
                   <a className={'/api' === this.state.section ? 'active' : ''}>
                     Api
                   </a>
                 </Link>
-                <Link prefetch href="/oss">
+                <Link href="/oss">
                   <a className={'/oss' === this.state.section ? 'active' : ''}>
                     OSS
                   </a>
                 </Link>
-                <Link prefetch href="/docs">
+                <Link href="/docs">
                   <a className={'/docs' === this.state.section ? 'active' : ''}>
                     Docs
                   </a>
                 </Link>
-                <Link prefetch {...pricingLinkProps}>
+                <Link {...pricingLinkProps}>
                   <a className={pricingIsActive ? 'active' : ''}>Pricing</a>
                 </Link>
               </div>
@@ -263,7 +262,7 @@ class Header extends React.PureComponent {
             <div className="nav right">
               {!clean && !this.props.user
                 ? [
-                    <Link prefetch href="/download" key="0">
+                    <Link href="/download" key="0">
                       <a
                         className={
                           ('/download' === this.state.section ? 'active' : '') +
@@ -273,7 +272,7 @@ class Header extends React.PureComponent {
                         Download
                       </a>
                     </Link>,
-                    <Link prefetch key="-3" href="/day">
+                    <Link key="-3" href="/day">
                       <a
                         className={
                           ('/day' === this.state.section ? 'active' : '') +
@@ -283,7 +282,7 @@ class Header extends React.PureComponent {
                         Day
                       </a>
                     </Link>,
-                    <Link prefetch key="-2" href="/tv">
+                    <Link key="-2" href="/tv">
                       <a
                         className={
                           ('/tv' === this.state.section ? 'active' : '') + ' tv'
@@ -292,7 +291,7 @@ class Header extends React.PureComponent {
                         TV
                       </a>
                     </Link>,
-                    <Link prefetch href="/chat" key="1">
+                    <Link href="/chat" key="1">
                       <a
                         className={`chat ${this.state.chatCount
                           ? 'chat-active'
@@ -302,7 +301,7 @@ class Header extends React.PureComponent {
                         <span>{this.state.chatCount}</span>
                       </a>
                     </Link>,
-                    <Link prefetch href="/login" key="2">
+                    <Link href="/login" key="2">
                       <a
                         className={
                           '/login' === this.state.section ? 'active' : ''
@@ -315,7 +314,7 @@ class Header extends React.PureComponent {
                 : null}
               {!clean && this.props.user
                 ? [
-                    <Link prefetch href="/download" key="0">
+                    <Link href="/download" key="0">
                       <a
                         className={
                           ('/download' === this.state.section ? 'active' : '') +
@@ -325,7 +324,7 @@ class Header extends React.PureComponent {
                         Download
                       </a>
                     </Link>,
-                    <Link prefetch key="-3" href="/day">
+                    <Link key="-3" href="/day">
                       <a
                         className={
                           ('/day' === this.state.section ? 'active' : '') +
@@ -335,7 +334,7 @@ class Header extends React.PureComponent {
                         Day
                       </a>
                     </Link>,
-                    <Link prefetch key="-2" href="/tv">
+                    <Link key="-2" href="/tv">
                       <a
                         className={
                           ('/tv' === this.state.section ? 'active' : '') + ' tv'
@@ -344,7 +343,7 @@ class Header extends React.PureComponent {
                         TV
                       </a>
                     </Link>,
-                    <Link prefetch href="/chat" key="1">
+                    <Link href="/chat" key="1">
                       <a
                         className={`chat ${this.state.chatCount
                           ? 'chat-active'
@@ -354,15 +353,10 @@ class Header extends React.PureComponent {
                         <span>{this.state.chatCount}</span>
                       </a>
                     </Link>,
-                    <Link prefetch href="/dashboard" key="2">
+                    <Link href="/dashboard" key="2">
                       <a className="mobile-link">Dashboard</a>
                     </Link>,
-                    <Link
-                      prefetch
-                      href="/account/identity"
-                      as="/account"
-                      key="3"
-                    >
+                    <Link href="/account/identity" as="/account" key="3">
                       <a className="mobile-link account">
                         Account
                         <div className="avatar-container">
@@ -396,15 +390,10 @@ class Header extends React.PureComponent {
 
               {clean && this.props.user
                 ? [
-                    <Link prefetch href="/dashboard" key="2">
+                    <Link href="/dashboard" key="2">
                       <a className="mobile-link">Dashboard</a>
                     </Link>,
-                    <Link
-                      prefetch
-                      href="/account/identity"
-                      as="/account"
-                      key="3"
-                    >
+                    <Link href="/account/identity" as="/account" key="3">
                       <a className="mobile-link account">
                         Account
                         <div className="avatar-container">
@@ -437,7 +426,7 @@ class Header extends React.PureComponent {
                 : null}
               {clean && !this.props.user
                 ? [
-                    <Link prefetch href="/login" key="2">
+                    <Link href="/login" key="2">
                       <a
                         className={
                           '/login' === this.state.section ? 'active' : ''
