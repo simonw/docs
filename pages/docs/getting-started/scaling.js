@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { arunoda } from '../../../lib/data/team'
@@ -15,7 +16,7 @@ export default withDoc({
   editUrl: 'pages/docs/getting-started/scaling.js',
 })(markdown(components)`
 
-Deploying an app is just the start. We need to scale our app as our user base grows. It could be a linear growth or random spikes in certain times. 
+Deploying an app is just the start. We need to scale our app as our user base grows. It could be a linear growth or random spikes in certain times.
 
 Either way, we need to make sure our app is running smoothly as the traffic increases. All the ${<Now color="#000"/>} deployments are backed by "auto scaling ready" infrastructure. So, you are in good hands.
 
@@ -34,13 +35,13 @@ By default, all of the deployments are configured like this:
 
 This means, when your deployment receives some traffic ${<Now color="#000"/>} will start an instance. If your deployment doesn't receive any traffic for a while, ${<Now color="#000"/>} will kill that instance.
 
-There's a fixed number of concurrent instances you can have based on the [plan](https://zeit.co/account/plan) you've chosen. But with this configuration, you can have as many as deployments you want. 
+There's a fixed number of concurrent instances you can have based on the [plan](https://zeit.co/account/plan) you've chosen. But with this configuration, you can have as many as deployments you want.
 
 _Having older deployments which are **not active** cost you nothing._
 
 ## Fixed Scaling
 
-As your user base grows, your app could be slower to respond. Because it tries to serve more requests than it could do. 
+As your user base grows, your app could be slower to respond. Because it tries to serve more requests than it could do.
 
 To resolve this issue, you can scale your app to run a fixed number of instances and they'll run forever.
 
@@ -52,7 +53,7 @@ In this case, ${<Now color="#000"/>} will set the \`min\` and \`max\` instance s
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/scaling/fixed-scaling.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/scaling/fixed-scaling.png`)}
     width={650}
     height={467}
     caption="The deployment is scaled to 3 instances and you can see the URLs for each of those instances."
@@ -73,7 +74,7 @@ If you run \`now alias\` again, it'll scale the new deployment accordingly and s
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/scaling/now-alias.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/scaling/now-alias.png`)}
     width={650}
     height={467}
     caption="Aliasing “hello-node-zhlrfgchkd.now.sh” to “hnode” changes it's scaling settings and “hnode”'s previous deployment."
@@ -96,7 +97,7 @@ ${<Now color="#000"/>} will automatically start and kill instances based on the 
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/scaling/auto-scaling.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/scaling/auto-scaling.png`)}
     width={650}
     height={335}
     caption="Auto scaling in action."

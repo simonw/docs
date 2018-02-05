@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo } from '../../../lib/data/team'
@@ -120,7 +121,7 @@ Now you should be able to run \`npm start\` inside the directory containing the 
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/graphql/api.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/graphql/api.png`)}
     width="550"
     height="307"
   />
@@ -259,7 +260,7 @@ In the browser, the client should look like this:
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/graphql/client.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/graphql/client.png`)}
     width="550"
     height="307"
   />

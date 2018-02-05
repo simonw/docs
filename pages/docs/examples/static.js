@@ -1,5 +1,6 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
+import asset from 'next/asset'
 
 import { leo } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
@@ -58,7 +59,7 @@ This is how it will look in the browser when opening the file:
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/static/browser.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/static/browser.png`)}
     width="550"
     height="319"
   />

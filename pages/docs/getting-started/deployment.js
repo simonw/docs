@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { arunoda } from '../../../lib/data/team'
@@ -36,7 +37,7 @@ If that directory contains an \`index.html\` file, that file will be served. Oth
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/deployment/static-dir-listing.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/deployment/static-dir-listing.png`)}
     width={600}
     height={325}
     caption="Directory listing of a static deployment"

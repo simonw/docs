@@ -1,5 +1,6 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
+import asset from 'next/asset'
 
 import { leo } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
@@ -83,7 +84,7 @@ Now, when running \`npm run start\` inside your terminal, you should see the fol
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/realtime-chat/server.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/realtime-chat/server.png`)}
     width={550}
     height={345}
   />
@@ -93,7 +94,7 @@ And when pointing your browser to the address shown (\`http://localhost:4000\`):
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/realtime-chat/hello-world.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/realtime-chat/hello-world.png`)}
     width={550}
     height={307}
   />
@@ -140,7 +141,7 @@ If you restart the process (by hitting \`control + C\` and running \`npm run sta
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/realtime-chat/form.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/realtime-chat/form.png`)}
     width={550}
     height={307}
   />
@@ -201,7 +202,7 @@ Try opening several tabs, and you’ll see several messages:
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/realtime-chat/connected.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/realtime-chat/connected.png`)}
     width={550}
     height={345}
   />
@@ -225,7 +226,7 @@ Then if you refresh a tab several times you can see it in action:
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/realtime-chat/disconnected.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/realtime-chat/disconnected.png`)}
     width={550}
     height={345}
   />
@@ -334,7 +335,7 @@ And that completes our chat application, in about **20 lines of code**! You can 
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/realtime-chat/result.gif`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/realtime-chat/result.gif`)}
     width={600}
     height={572}
   />

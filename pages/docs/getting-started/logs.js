@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { arunoda } from '../../../lib/data/team'
@@ -34,7 +35,7 @@ ${<TerminalInput>now logs --help</TerminalInput>}
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/logs/help.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/logs/help.png`)}
     width={650}
     height={470}
     caption="Help of 'now logs'"
@@ -47,7 +48,7 @@ ${<TerminalInput>now logs -a -q "GET" -n 10 my-web-app.com</TerminalInput>}
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/logs/last-10-get-requests.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/logs/last-10-get-requests.png`)}
     width={650}
     height={470}
     caption="Last 10 HTTP GET requests."
@@ -63,7 +64,7 @@ Click any of your deployment URLs inside the dashboard and start searching logs.
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/logs/now-dashboard-logs.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/logs/now-dashboard-logs.png`)}
     width={650}
     height={445}
     caption="Searching logs inside the web dashboard."

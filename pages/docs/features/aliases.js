@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { rauchg } from '../../../lib/data/team'
@@ -95,7 +96,7 @@ After this successful message, your deployment is instantly available via its or
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/aliases/alias-dest.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/aliases/alias-dest.png`)}
     width="682"
     height="468"
     caption={
