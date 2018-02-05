@@ -69,7 +69,7 @@ ${
 
 ## Port Selection
 
-You can expose an HTTP service on **any port** of your choice (not multiple ones). ${<Now color="#000" />} will then route requests to your deployment on that port from the port \`443\` and visitors will see the rendered output of your application.
+${<Now color="#000" />} deployment instances always listen on port \`443\` (HTTPS) of their given url. Your server code can expose a HTTP service on **any port** of your choice (not multiple ones). ${<Now color="#000" />} will then route requests received on port \`443\` to your HTTP service port and its response will be returned by the deployment instance.
 
 Aditionally visitors will be redirected from \`http\` to \`https\` automatically.
 
