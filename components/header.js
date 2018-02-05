@@ -167,28 +167,18 @@ class Header extends React.PureComponent {
         )}
 
         <header className={clean ? 'clean' : null}>
-          <Link
-            as={
+          <a
+            href={
               currentTeamSlug
                 ? `/teams/${currentTeamSlug}`
                 : this.props.user && !lean ? '/dashboard' : '/'
             }
-            href={
-              this.props.user && !lean
-                ? `/dashboard${currentTeamSlug
-                    ? `?teamSlug=${currentTeamSlug}`
-                    : ''}`
-                : '/'
-            }
+            className="logo"
+            onMouseEnter={this.onLogoMouseEnter}
+            onContextMenu={this.onLogoRightClick}
           >
-            <a
-              className="logo"
-              onMouseEnter={this.onLogoMouseEnter}
-              onContextMenu={this.onLogoRightClick}
-            >
-              {this.props.logo ? <span>{this.props.logo}</span> : <Logo />}
-            </a>
-          </Link>
+            {this.props.logo ? <span>{this.props.logo}</span> : <Logo />}
+          </a>
           <div
             className="menu-arrow"
             onClick={event => {
