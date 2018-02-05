@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { arunoda } from '../../../lib/data/team'
@@ -26,7 +27,7 @@ Hence, you need a fixed domain name.
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/assign-a-domain-name/custom-domain.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/assign-a-domain-name/custom-domain.png`)}
     width={600}
     height={325}
     caption="Our sample static app with a fixed domain name."
@@ -70,7 +71,7 @@ After the confirmation, ${<Now color="#000"/>} will handle all the technical det
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/assign-a-domain-name/buy-domain.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/assign-a-domain-name/buy-domain.png`)}
     width={650}
     height={412}
     caption="Confirmation you'll get after assigning a custom domain."
@@ -121,7 +122,7 @@ You will then have an error like this:
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/assign-a-domain-name/alias-error.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/assign-a-domain-name/alias-error.png`)}
     width={650}
     height={412}
     caption="Error message you'll get when trying to alias a domain for the first time."

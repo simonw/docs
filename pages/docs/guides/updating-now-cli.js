@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo } from '../../../lib/data/team'
@@ -41,7 +42,7 @@ export default withDoc({
   ensuring this option is marked as enabled in [Now Desktop](/download):
 
   ${<Image
-    src={`${IMAGE_ASSETS_URL}/blog/improved-cli-updates/update-option.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/blog/improved-cli-updates/update-option.png`)}
     width={385}
     height={228}
   />}

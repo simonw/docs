@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo, arunoda } from '../../../lib/data/team'
@@ -26,17 +27,17 @@ domain name of your choice and configure an SSL certificate.
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/installation/now-desktop.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/installation/now-desktop.png`)}
     width={550}
     height={380}
   />
 }
 
 The best way to get started with Now on your device
-is [Now Desktop](/download), a minimal application
+is [Now Desktop](https://zeit.co/download), a minimal application
 that runs in your menubar and comes with the following features:
 
-- Installs [Now CLI](/download#command-line) and keeps it
+- Installs [Now CLI](https://zeit.co/download#command-line) and keeps it
 up to date automatically (the command line interface for interacting with Now).
 - Provides a realtime feed of the activity
 on your account and teams that you've joined.
@@ -46,7 +47,7 @@ it using a file picker.
 
 ## Signing Up
 
-Once you've downloaded [Now Desktop](/download) open it and follow the
+Once you've downloaded [Now Desktop](https://zeit.co/download) open it and follow the
 instructions.
 
 After you've completed the signup process (you can also use the form
@@ -75,7 +76,7 @@ ${<TerminalInput>now</TerminalInput>}
 ${<Now color="#000"/>} will deploy the app and give you a URL as shown below.
 
 ${<Image
-  src={`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/deploy.png`}
+  src={asset(`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/deploy.png`)}
   width={650}
   height={255}
   caption="Getting a unique URL after the deployment."
@@ -109,7 +110,7 @@ Once you've done that, you'll be able to access your app using <https://my-web-a
 It is automatically configured with a [Let's Encrypt](https://letsencrypt.org/) SSL certificate and served with HTTPS.
 
 ${<Image
-  src={`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/domain-setup.png`}
+  src={asset(`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/domain-setup.png`)}
   width={650}
   height={412}
   caption="After mapping a domain name to a deployment."

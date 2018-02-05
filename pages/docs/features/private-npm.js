@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { rase, leo } from '../../../lib/data/team'
@@ -24,7 +25,7 @@ This command will forward your npm credentials during the build process to fetch
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/private-npm/example.gif`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/private-npm/example.gif`)}
     width="658"
     height="483"
   />

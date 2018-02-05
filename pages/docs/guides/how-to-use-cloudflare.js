@@ -1,4 +1,5 @@
 import markdown from 'markdown-in-js'
+import asset from 'next/asset'
 import withDoc, { components } from '../../../lib/with-doc'
 
 import { arunoda } from '../../../lib/data/team'
@@ -34,7 +35,7 @@ Here's how the Cloudflare's DNS settings page looks after we've added the TXT re
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-now-txt.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-now-txt.png`)}
     width={600}
     height={336}
   />
@@ -58,7 +59,7 @@ Make sure to **uncheck** the cloud symbol for the Record. So, Cloudflare only ac
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-dns-records.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-dns-records.png`)}
     width={600}
     height={259}
   />
@@ -88,7 +89,7 @@ For that, simply check the Cloud icon next to the Domain name (in the DNS settin
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-dns-proxy-mode.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-dns-proxy-mode.png`)}
     width={600}
     height={259}
   />
@@ -102,7 +103,7 @@ For that, go to the Crypto settings page and select the Full (Strict) mode.
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-full-strict-ssl.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-full-strict-ssl.png`)}
     width={600}
     height={321}
   />
@@ -122,7 +123,7 @@ This is what it looks like when creating the rule:
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-page-rule-ssl-off.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-page-rule-ssl-off.png`)}
     width={600}
     height={344}
   />
@@ -132,7 +133,7 @@ Finally, make sure to keep the above rule on the top of the list. Otherwise, it'
 
 ${
   <Image
-    src={`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-page-rules-ssl-off-on-top.png`}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/how-to-use-cloudflare/cloudflare-page-rules-ssl-off-on-top.png`)}
     width={600}
     height={107}
   />
