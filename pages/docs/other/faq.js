@@ -47,7 +47,7 @@ ${<TerminalInput>now rm my-app --safe --yes</TerminalInput>}
 
 This command will remove all your non-aliased deployments with the name \`my-app\`. This can be run after the \`now alias\` command to remove the previous deployment of the project.
 
-${<TerminalInput>now && now alias && npm run my-app --safe --yes</TerminalInput>}
+${<TerminalInput>now && now alias && now rm my-app --safe --yes</TerminalInput>}
 
 ## How do I pick the deployment region(s) for my application?
 
