@@ -8,7 +8,7 @@ export default withDoc({
   title: 'Support Channels',
   date: '21 Jul 2017',
   authors: [sergio],
-  editUrl: 'pages/docs/guides/support-channels.js',
+  editUrl: 'pages/docs/other/support-channels.js',
 })(markdown(components)`
 We have a few support channels you can use to clarify doubts and solve issues.
 

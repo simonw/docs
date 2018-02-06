@@ -11,7 +11,7 @@
     "lint:staged": "lint-staged",
     "test": "npm run lint",
     "deploy": "node scripts/deploy",
-    "last:edited": "node scripts/last-edited"
+    "last:edited": "node scripts/last-edited && git add lib/data/last-edited.json"
   },
   "babel": {
     "presets": [

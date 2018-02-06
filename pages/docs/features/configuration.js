@@ -151,6 +151,8 @@ ${
   </Code>
 }
 
+Note that this will act as a whitelist of files and folders to upload. Any file or folder not added there will not be uploaded to the deployment.
+
 #### \`type\` (string)
 
 A field for specifying the deployment type ("npm", "docker" or "static") if both \`package.json\` and \`Dockerfile\` exist. This will prevent \`now\` from asking you to choose the type in these cases.

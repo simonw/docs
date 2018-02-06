@@ -13,7 +13,7 @@ export default withDoc({
   title: 'Billing',
   date: '21 Jul 2017',
   authors: [leo],
-  editUrl: 'pages/docs/guides/billing.js',
+  editUrl: 'pages/docs/other/billing.js',
 })(markdown(components)`
   This page describes the part of our platform
   that is responsible for payments, subscriptions and

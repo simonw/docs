@@ -1,7 +1,6 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 import { arunoda } from '../../../lib/data/team'
-import { InternalLink } from '../../../components/text/link'
 import Now from '../../../components/now/now'
 
 // prettier-ignore
@@ -16,7 +15,8 @@ As you've gone through the getting started guide, you are ready to do production
 
 For additional information, follow these links:
 
-* ${<InternalLink href="/docs/deployment-types/lifecycle">Discover more with guides</InternalLink>}
-* ${<InternalLink href="/docs/examples/json-api">Try example apps</InternalLink>}
-* ${<InternalLink href="/docs/other/support-channels">Connect with our support channels</InternalLink>}
+* [Discover more with guides](/docs/deployment-types/lifecycle)
+* [Try example apps](/docs/examples/json-api)
+* [Connect with our support channels](/docs/other/support-channels)
+* [Check the most frequently asked questions](/docs/other/faq)
 `)
