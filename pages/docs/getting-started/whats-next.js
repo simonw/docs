@@ -18,5 +18,5 @@ For additional information, follow these links:
 * [Discover more with guides](/docs/deployment-types/lifecycle)
 * [Try example apps](/docs/examples/json-api)
 * [Connect with our support channels](/docs/other/support-channels)
-* [Check the most frequently asked questions](/docs/other/faq)
+* [Check the frequently asked questions (FAQ)](/docs/other/faq)
 `)
