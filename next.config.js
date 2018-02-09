@@ -51,7 +51,7 @@ module.exports = {
         runtimeCaching: [
           {
             handler: 'networkFirst',
-            urlPattern: /^https?.*/
+            urlPattern: /^https?:\/\/.*\/(api|docs|_next)/
           }
         ]
       })
