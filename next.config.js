@@ -47,7 +47,9 @@ module.exports = {
       new SwPrecachePlugin({
         verbose: false,
         minify: true,
-        staticFileGlobsIgnorePatterns: [/\.next\//],
+        // Do not precache anything.
+        // This allows us to handle caching at runtime.
+        staticFileGlobsIgnorePatterns: [/.*/],
         runtimeCaching: [
           // Cache all the Next.js assets. Once cached, they don't need to get refetched
           {
