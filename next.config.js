@@ -49,9 +49,15 @@ module.exports = {
         minify: true,
         staticFileGlobsIgnorePatterns: [/\.next\//],
         runtimeCaching: [
+          // Cache all the Next.js assets. Once cached, they don't need to get refetched
+          {
+            handler: 'cacheFirst',
+            urlPattern: /^https?:\/\/.*\/_next/
+          },
+          // Cache any page for /docs or /api. But make sure to fetch it from the network first
           {
             handler: 'networkFirst',
-            urlPattern: /^https?:\/\/.*\/(api|docs|_next)/
+            urlPattern: /^https?:\/\/.*\/(docs|api)/
           }
         ]
       })
