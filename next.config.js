@@ -60,6 +60,12 @@ module.exports = {
           {
             handler: 'networkFirst',
             urlPattern: /^https?:\/\/.*\/(docs|api)/
+          },
+          // Cache anything in the static directory. We don't updates items in the static directory.
+          // So, it's fine to use the cacheFirst handler
+          {
+            handler: 'cacheFirst',
+            urlPattern: /^https?:\/\/.*\/static/
           }
         ]
       })
