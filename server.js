@@ -1,5 +1,6 @@
 const micro = require('micro')
 const next = require('next')
+const { join } = require('path')
 
 const dev = process.env.NODE_ENV !== 'production'
 const dir = __dirname
@@ -25,7 +26,12 @@ app.prepare().then(() => {
       app.setAssetPrefix(`https://${req.headers.host}`)
     }
 
-    handleNextRequests(req, res)
+    if (req.url === '/service-worker.js') {
+      const swFilePath = join(__dirname, '.next', req.url.replace('/', ''))
+      app.serveStatic(req, res, swFilePath)
+    } else {
+      handleNextRequests(req, res)
+    }
   })
 
   server.listen(port, err => {

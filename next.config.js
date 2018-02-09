@@ -1,4 +1,5 @@
 const glob = require('glob-promise')
+const SwPrecachePlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
   exportPathMap: async function() {
@@ -23,6 +24,40 @@ module.exports = {
     }, {})
 
     return pageMap
+  },
+
+  webpack: function(config, { dev, isServer }) {
+    if (isServer) {
+      return config
+    }
+
+    const originalEntry = config.entry
+    config.entry = async () => {
+      const entries = await originalEntry()
+      const initFilePath = `./client/init-${dev ? 'dev' : 'prod'}.js`
+      entries['main.js'].unshift(initFilePath)
+      return entries
+    }
+
+    if (dev) {
+      return config
+    }
+
+    config.plugins.push(
+      new SwPrecachePlugin({
+        verbose: false,
+        minify: true,
+        staticFileGlobsIgnorePatterns: [/\.next\//],
+        runtimeCaching: [
+          {
+            handler: 'networkFirst',
+            urlPattern: /^https?.*/
+          }
+        ]
+      })
+    )
+
+    return config
   },
 
   // By default we don't have any assetPrefix.
