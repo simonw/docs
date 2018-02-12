@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from '../../../lib/link-prefetch'
 import qs from 'querystring'
 import { parse } from 'url'
 import _scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
@@ -102,7 +102,7 @@ export class NavLink extends React.Component {
             {level > 2 && <span>-</span>} {info.name}
           </a>
         ) : (
-          <Link href={info.href} as={info.as || info.href} prefetch>
+          <Link href={info.href} as={info.as || info.href}>
             <a className={selected ? 'selected' : ''}>
               {level > 2 && <span>-</span>} {info.name}
             </a>

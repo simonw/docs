@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'next/router'
-import Link from 'next/link'
+import Link from '../../../lib/link-prefetch'
 
 const ActivePageButton = withRouter(({ children, router, href }) => {
   return (
