@@ -21,9 +21,8 @@ function Deployments(props) {
 
   return (
     <Section
-      contents={
-        // prettier-ignore
-        [
+      contents={// prettier-ignore
+      [
   [
     markdown(components)`
 ### Create a new deployment
@@ -31,7 +30,7 @@ function Deployments(props) {
   ],
   [
     markdown(components)`
-${<Endpoint method="POST" url="/v2/now/deployments" />}
+${<Endpoint method="POST" url="/v3/now/deployments" />}
 
 Create a new deployment on the fly by supplying all the required data.
 
@@ -50,8 +49,8 @@ ${<InputTable>
   <Row>
     <BoldCell>public</BoldCell>
     <TypeCell>Boolean</TypeCell>
-    <BooleanCell status={false} />
-    <Cell>A boolean indicating if the deployment is public. Every deployment done under the OSS plan will be public.</Cell>
+    <BooleanCell status={true} />
+    <Cell>A boolean indicating if the deployment is public. For every deployment done under the OSS plan, this needs to be set to <InlineCode>true</InlineCode>.</Cell>
   </Row>
   <Row>
     <BoldCell>forceNew</BoldCell>
@@ -754,8 +753,7 @@ ${<Code syntax="json">{`{
 }`}</Code>}
     `
   ]
-]
-      }
+]}
     />
   )
 }

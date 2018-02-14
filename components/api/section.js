@@ -18,11 +18,24 @@ export default class Section extends React.PureComponent {
   }
 
   render() {
-    const title = this.props.title || this.context.name
+    let { hideTitle, hideBottom, title } = this.props
+    const classes = ['section']
+
+    if (!title) {
+      title = this.context.name
+    }
+
+    if (hideTitle) {
+      classes.push('hide-title')
+    }
+
+    if (hideBottom) {
+      classes.push('hide-bottom')
+    }
 
     return (
-      <div className="section">
-        <div className="block">
+      <div className={classes.join(' ')}>
+        <div className="block title">
           <div className="copy">
             <Heading lean={true} offsetTop={95} id={this.getId()}>
               <h1>{title}</h1>
@@ -95,6 +108,15 @@ export default class Section extends React.PureComponent {
             padding-bottom: 15px;
           }
 
+          .section.hide-bottom .block:last-child .copy,
+          .section.hide-bottom .block:last-child .example {
+            padding-bottom: 0;
+          }
+
+          .section.hide-title .title {
+            display: none;
+          }
+
           @media screen and (max-width: 950px) {
             .section {
               width: 100%;
@@ -110,6 +132,10 @@ export default class Section extends React.PureComponent {
               content: '';
               width: 100%;
               background-image: linear-gradient(90deg, #eaeaea 50%, #333 50%);
+            }
+
+            .section.hide-bottom::after {
+              display: none;
             }
 
             .example :global(div:first-child) > :global(pre) {

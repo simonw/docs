@@ -6,9 +6,8 @@ import immutable from '../../../../lib/immutable-component'
 function Generic() {
   return (
     <Section
-      contents={
-        // prettier-ignore
-        [
+      contents={// prettier-ignore
+      [
   [
     markdown(components)`
 These error codes are consistent for all endpoints.
@@ -94,7 +93,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Resource not found
+### Resource Not Found
   `
   ],
   [
@@ -113,7 +112,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Method unknown
+### Method Unknown
   `
   ],
   [
@@ -130,8 +129,7 @@ ${<Code>{`{
 }`}</Code>}
     `
   ]
-]
-      }
+]}
     />
   )
 }

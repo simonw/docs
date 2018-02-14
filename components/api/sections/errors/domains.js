@@ -7,9 +7,8 @@ import immutable from '../../../../lib/immutable-component'
 function Domains() {
   return (
     <Section
-      contents={
-        // prettier-ignore
-        [
+      contents={// prettier-ignore
+      [
   [
     markdown(components)`
 These error code could happen when using any ${<InternalLink href="/api#endpoints/domains">domains related endpoints</InternalLink>}.
@@ -17,7 +16,7 @@ These error code could happen when using any ${<InternalLink href="/api#endpoint
   ],
   [
     markdown(components)`
-### Domain forbidden
+### Domain Forbidden
     `
   ],
   [
@@ -38,7 +37,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Domain not found
+### Domain Not Found
     `
   ],
   [
@@ -56,7 +55,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Missing domain name
+### Missing Domain Name
     `
   ],
   [
@@ -74,7 +73,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Conflicting certificates
+### Conflicting Certificates
     `
   ],
   [
@@ -95,7 +94,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Conflicting aliases
+### Conflicting Aliases
     `
   ],
   [
@@ -116,7 +115,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Not modified
+### Not Modified
     `
   ],
   [
@@ -134,7 +133,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Missing domain name
+### Missing Domain Name
     `
   ],
   [
@@ -152,7 +151,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Invalid domain name
+### Invalid Domain Name
     `
   ],
   [
@@ -173,7 +172,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Custom domain needs a plan upgrade
+### Custom Domain Needs a Plan Upgrade
     `
   ],
   [
@@ -191,7 +190,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Domain already exists
+### Domain Already Exists
     `
   ],
   [
@@ -213,7 +212,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Can't create the domain
+### Can't Create the Domain
     `
   ],
   [
@@ -231,7 +230,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Failed to add domain after purchase
+### Failed to Add Domain after Purchase
     `
   ],
   [
@@ -249,7 +248,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Unable to determine the domain price
+### Unable to Determine the Domain Price
     `
   ],
   [
@@ -267,7 +266,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Domain is not available
+### Domain Is Not Available
     `
   ],
   [
@@ -285,7 +284,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Invalid domain name
+### Invalid Domain Name
     `
   ],
   [
@@ -303,7 +302,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Domain not found
+### Domain Not Found
     `
   ],
   [
@@ -321,7 +320,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Missing DNS record name
+### Missing DNS Record Name
     `
   ],
   [
@@ -339,7 +338,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Missing DNS record name
+### Missing DNS Record Name
     `
   ],
   [
@@ -355,8 +354,7 @@ ${<Code>{`{
 }`}</Code>}
     `
   ]
-]
-      }
+]}
     />
   )
 }

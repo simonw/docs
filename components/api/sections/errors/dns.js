@@ -7,9 +7,8 @@ import immutable from '../../../../lib/immutable-component'
 function Domains() {
   return (
     <Section
-      contents={
-        // prettier-ignore
-        [
+      contents={// prettier-ignore
+      [
   [
     markdown(components)`
 These error code could happen when using any ${<InternalLink href="/api#endpoints/dns">DNS related endpoint</InternalLink>}.
@@ -17,7 +16,7 @@ These error code could happen when using any ${<InternalLink href="/api#endpoint
   ],
   [
     markdown(components)`
-### Missing DNS record name
+### Missing DNS Record Name
     `
   ],
   [
@@ -35,7 +34,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Missing DNS record name
+### Missing DNS Record Name
     `
   ],
   [
@@ -51,8 +50,7 @@ ${<Code>{`{
 }`}</Code>}
     `
   ]
-]
-      }
+]}
     />
   )
 }

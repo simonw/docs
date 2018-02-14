@@ -7,9 +7,8 @@ import immutable from '../../../../lib/immutable-component'
 function DeploymentErrors() {
   return (
     <Section
-      contents={
-        // prettier-ignore
-        [
+      contents={// prettier-ignore
+      [
   [
     markdown(components)`
 These error code could happen when using any ${<InternalLink href="/api#endpoints/deployments">deployment related endpoint</InternalLink>}.
@@ -17,7 +16,7 @@ These error code could happen when using any ${<InternalLink href="/api#endpoint
   ],
   [
     markdown(components)`
-### Missing files
+### Missing Files
     `
   ],
   [
@@ -36,7 +35,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### No files in the deployment
+### No Files in the Deployment
     `
   ],
   [
@@ -54,7 +53,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Too many active deployment instances
+### Too Many Active Deployment Instances
     `
   ],
   [
@@ -72,7 +71,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Too many environment variables
+### Too Many Environment Variables
     `
   ],
   [
@@ -92,7 +91,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Environment variable key with invalid characters
+### Environment Variable Key with Invalid Characters
     `
   ],
   [
@@ -113,7 +112,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Environment variable key with a long name
+### Environment Variable Key with a Long Name
     `
   ],
   [
@@ -134,7 +133,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Environment variable value with a long name
+### Environment Variable Value with a Long Name
     `
   ],
   [
@@ -156,7 +155,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Environment variable value is an object without uid
+### Environment Variable Value Is an Object without UID
     `
   ],
   [
@@ -176,7 +175,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Environment variable value is an object with unknown props
+### Environment Variable Value Is an Object with Unknown Props
     `
   ],
   [
@@ -194,7 +193,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Environment variable value with an invalid type
+### Environment Variable Value with an Invalid Type
     `
   ],
   [
@@ -215,7 +214,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Not allowed to access a secret
+### Not Allowed to Access a Secret
     `
   ],
   [
@@ -234,7 +233,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Missing secret
+### Missing Secret
     `
   ],
   [
@@ -253,7 +252,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Invalid session affinity value
+### Invalid Session Affinity Value
     `
   ],
   [
@@ -268,9 +267,31 @@ ${<Code>{`{
   }
 }`}</Code>}
     `
+  ],
+  [
+    markdown(components)`
+### Wrong Value for ${<InlineCode>public</InlineCode>} Property
+    `
+  ],
+  [
+    markdown(components)`
+You tried to create a deployment on the OSS plan with the ${<InlineCode>public</InlineCode>} property
+either set to ${<InlineCode>false</InlineCode>} or not set at all.
+
+On the OSS plan, it is required that you set this property to ${<InlineCode>true</InlineCode>} in
+order to explicitly acknowledge that the deployment's code will be
+publicly accessibly.
+    `,
+    markdown(components)`
+${<Code>{`{
+  "error": {
+    "code": "plan_requires_public",
+    "message": "Your plan (OSS) requires the deployment to be marked as public."
+  }
+}`}</Code>}
+    `
   ]
-]
-      }
+]}
     />
   )
 }
