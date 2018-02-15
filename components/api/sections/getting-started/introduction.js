@@ -39,7 +39,7 @@ server.listen()`,
 function Preview(props) {
   return (
     <div className="preview">
-      <Code syntax="shell">{`curl -X POST https://api.zeit.co/v2/now/deployments \\
+      <Code syntax="shell">{`curl -X POST https://api.zeit.co/v3/now/deployments \\
 -H 'Authorization: Bearer $TOKEN' \\
 -d '${(props.content || '').replace(/'/g, "\\'")}'`}</Code>
       {props.errorMessage ? (
@@ -247,7 +247,7 @@ class Editor extends React.PureComponent {
               serif;
             font-size: 12px;
             line-height: 16px;
-            height: 326px;
+            height: 346px;
             padding: 10px 20px 20px 20px;
             color: black;
           }
@@ -920,7 +920,7 @@ class Introduction extends React.PureComponent {
     try {
       this.setState({ errorMessage: null, deploying: true })
 
-      const response = await fetch('https://api.zeit.co/v2/now/deployments', {
+      const response = await fetch('https://api.zeit.co/v3/now/deployments', {
         method: 'POST',
         body: this.state.content
       })
@@ -949,9 +949,8 @@ class Introduction extends React.PureComponent {
   render() {
     return (
       <Section
-        contents={
-          // prettier-ignore
-          [
+        contents={// prettier-ignore
+        [
   [
     markdown(components)`
 The ${<Now color="#000" />} API gives you full control over our entire platform by
@@ -969,8 +968,7 @@ to [our official clients](/download), exposed as simple HTTP endpoints.
       key="2"
     />
   ]
-          ]
-        }
+          ]}
       />
     )
   }
@@ -985,6 +983,7 @@ function filesToAPIBody(files) {
     {
       name: pkg.name,
       deploymentType: 'NPM',
+      public: true,
       files: Object.entries(files).map(([file, data]) => ({
         file,
         data: data.replace(/'/g, '"')
