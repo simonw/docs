@@ -53,7 +53,7 @@ ${<Now color="#000" />} deployment instances always listen on port \`443\` (HTTP
 
 The port that listens for incoming HTTP traffic needs to be defined either in the \`Dockerfile\` that's being used inside the deployment, or the \`Dockerfile\` it's "inheriting" from.
 
-Aditionally visitors will be redirected from \`http\` to \`https\` automatically.
+Additionally visitors will be redirected from \`http\` to \`https\` automatically.
 
 ## Deployment Inactivity
 
