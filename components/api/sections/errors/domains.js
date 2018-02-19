@@ -266,6 +266,25 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
+### Domain price mismatch
+    `
+  ],
+  [
+    markdown(components)`
+The ${<InlineCode>expectedPrice</InlineCode>} supplied in the request body doesn't match the actual domain price, which is specificed in the ${<InlineCode>actualPrice</InlineCode>} key.
+    `,
+    markdown(components)`
+${<Code>{`{
+  "error": {
+    "code": "price_mismatch",
+    "message": "The expected price doesn't match the actual price",
+    "price": ACTUAL_PRICE
+  }
+}`}</Code>}
+    `
+  ],
+  [
+    markdown(components)`
 ### Domain Is Not Available
     `
   ],

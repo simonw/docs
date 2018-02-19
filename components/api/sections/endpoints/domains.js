@@ -373,6 +373,12 @@ ${<InputTable>
     <BooleanCell status={true} />
     <Cell>The domain name you want to purchase.</Cell>
   </Row>
+  <Row>
+    <BoldCell>expectedPrice</BoldCell>
+    <TypeCell>Number</TypeCell>
+    <BooleanCell status={false} />
+    <Cell>The price you expect to be charged for the purchase.</Cell>
+  </Row>
 </InputTable>}
     `,
     markdown(components)`
