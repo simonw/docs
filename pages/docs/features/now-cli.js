@@ -209,6 +209,7 @@ ${<Now color="#000" />} uses the metafiles inside your project to determine whic
 
 * If \`.gitignore\` exists, we don't upload the contents that are defined in it
 * If \`.npmignore\` exists, we don't upload the contents that are defined in it and ignore the existence of .gitignore
+* If \`.dockerignore\` exists, we don't upload the contents that are defined in it and ignore the existence of .gitignore and .npmignore
 
 But it will get a little tricky if you're using the \`files\` property inside \`package.json\`: In that case, we follow [npm](https://www.npmjs.com/)'s behaviour. This means that if \`files\` exists (which as [per definition](https://docs.npmjs.com/files/package.json#files) defines which files **should** be uploaded), \`.npmignore\` will take precedence and have the final word on which items will be uploaded to ${<Now color="#000" />}.
 
