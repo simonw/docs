@@ -78,6 +78,8 @@ ${
 
 Once it's created, you can rename it with \`now secret rename\` or delete it completely with \`now secret rm\`. For more examples and the full list of options and commands, run \`now help secret\`.
 
+> *Note*: The name of a secret can not be longer than 100 characters.
+
 Afterwards, you can assign the secret to an environment variable. Here's an example of doing this using a command:
 
 ${
