@@ -2,7 +2,7 @@ import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 import { devisscher } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
-import { Code } from '../../../components/text/code'
+import { Code, InlineCode } from '../../../components/text/code'
 
 // prettier-ignore
 export default withDoc({
@@ -16,7 +16,7 @@ You might want to automate your Now deployments. Here is how you can achieve thi
 
 1. You need to get a [token](https://zeit.co/account/tokens). Go to the tokens page of your dashboard, under Account Settings, Tokens. Enter the name of the Token (e.g. Travis CI) and hit enter. A new token will be created which you can copy to your clipboard by clicking Copy.
 2. Create a .travis.yml file in the root of your project.
-3. Generate a secure variable for your Zeit token by running the following command with the token you obtained from your Zeit account. (You need to install [The Travis Client](https://github.com/travis-ci/travis.rb#installation)):
+3. Generate a secure variable for your ZEIT token by running the following command with the token you obtained from your ZEIT account. (You need to install [The Travis Client](https://github.com/travis-ci/travis.rb#installation)):
 
 ${<TerminalInput>travis encrypt -r username/repo NOW_TOKEN=xxxxxxxxxxxxxxxxxxxxxxx --add</TerminalInput>}
 
@@ -36,8 +36,10 @@ global:
 `}
 </Code>}
 
-5. Open your package.json file and add the following information, tailored to your site information. This is used to run the alias command and point your domain to the correct deployment (You could also put this in a [now.json](
-    https://zeit.co/blog/now-json) file):
+5. Open your package.json file and add the following
+information, adapted for your own deployment. This is used to run the alias command and point your
+domain to the correct deployment (you could also put
+this in a [now.json](https://zeit.co/blog/now-json) file):
 
 ${
 <Code>{`{
@@ -49,7 +51,7 @@ ${
     ...
 }`}</Code>}
 
-6. Also add the following 2 scripts to the script property in your package.json file. These are used in your Travis config. The first is to deploy and the second is used to alias your latest deploy:
+6. Also add the following 2 scripts to the ${<InlineCode>script</InlineCode>} property in your package.json file. These are used by your Travis config. The first is to deploy and the second is used to alias your latest deploy:
 
 ${
 <Code>{`{

@@ -16,7 +16,7 @@ export default withDoc({
 
 ## Where Can I See the Current Status of the Platform?
 
-Check our [Twitter status account](https://twitter.com/zeit_status) and our [status page](https://zeit-status.co/) to find current and real time updates.
+Check our [status page](https://zeit-status.co) and [Twitter status account](https://twitter.com/zeit_status) to find current and real time updates.
 
 ## What Is the Difference between Deployments and Instances?
 
@@ -26,11 +26,11 @@ can be [scaled](/docs/getting-started/scaling) to multiple instances.
 
 Therefore, each "deployment" can consist of multiple "instances".
 
-Every personal account and team can retain ownership over unlimited deployments. However, the
-number of instances running is limited by the [current plan](/pricing) of your personal account or team.
+Both personal and team accounts may own unlimited deployments. However, the
+number of running instances is limited your personal or team account's [current plan](/pricing).
 
-If you exceed the plan limit for running instances on a paid plan, you will
-be charged the "On Demand" price (check the [On Demand plan](/pricing)) for
+If you exceed your paid plan's limit for running instances, you will
+be charged the **On Demand price** (check the [On Demand plan](/pricing)) for
 the additional instances.
 
 ## How Do I Deploy and Alias in a Single Command?
@@ -99,7 +99,7 @@ You can just move your alias to an older deployment to have immediate rollbacks.
 
 ## Can I Run a Database on the Now Platform?
 
-Now deployments **must** expose a [single](/docs/deployment-types/node#port-selection) [port](/docs/deployment-types/docker#port-selection) running an HTTP or WebSocket server. But thanks to Docker it is possible to run a database in the same container of the HTTP API consuming it.
+Now deployments **must** expose a [single](/docs/deployment-types/node#port-selection) [port](/docs/deployment-types/docker#port-selection) running an HTTP or WebSocket server. However, using Docker it is possible to run a database in the same container of the HTTP API consuming it.
 
 Note that due the immutability of deployments there are many cases where you will lose the data of your database.
 
