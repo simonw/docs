@@ -51,16 +51,25 @@ Row.childContextTypes = {
   header: PropTypes.bool
 }
 
-const Column = ({ children }, context) =>
-  React.createElement(
-    context.header ? 'th' : 'td',
-    {
-      style: {
-        verticalAlign: 'top'
-      }
-    },
-    children
-  )
+const Column = ({ children, right, left }, context) => {
+  const style = {
+    verticalAlign: 'top',
+    paddingTop: '15px',
+    paddingBottom: '15px',
+    paddingRight: '10px',
+    paddingLeft: '10px'
+  }
+
+  if (left) {
+    style.paddingLeft = '0px'
+  }
+
+  if (right) {
+    style.paddingRight = '0px'
+  }
+
+  return React.createElement(context.header ? 'th' : 'td', { style }, children)
+}
 
 Column.contextTypes = {
   header: PropTypes.bool

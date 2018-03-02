@@ -3,7 +3,7 @@ import withDoc, { components } from '../../../lib/with-doc'
 
 import { leo, rauchg } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
-import { InternalLink } from '../../../components/text/link'
+import { InternalLink, GenericLink } from '../../../components/text/link'
 import { Code, InlineCode } from '../../../components/text/code'
 import { TerminalInput } from '../../../components/text/terminal'
 import { Table, Row, Column } from '../../../components/table'
@@ -16,32 +16,32 @@ export default withDoc({
   editUrl: 'pages/docs/features/now-cli.js',
 })(markdown(components)`
 
-The \`now\` CLI is the main interface to the now cloud.
+The \`now\` CLI is the main interface to the Now platform.
 
-It's available on Mac, Linux and Windows either via \`npm\` or as pre-built binaries. The recommended installation mechanism is by installing Now ${<InternalLink href="/download">Desktop</InternalLink>} which also ensures it's always up-to-date.
+It's available on macOS, Windows and Linux either via \`npm\` or as pre-built
+binaries. The recommended installation
+mechanism, however, is ${<InternalLink href="/download">Now Desktop</InternalLink>} (which
+includes Now CLI and also ensures it's always up-to-date).
 
-While the default behavior of \`now\` is to deploy, it also has a variety of sub-commands grouped by different concerns.
+While the default behavior of \`now\` is to deploy, it also has a variety of sub
+commands grouped by different concerns.
 
-## Commands
+### Cloud Commands
 
-Here's the full list of all command available and what you can do with them:
-
-### Cloud
-
-The commands you should remember when working with now daily:
+The following are the most important commands in Now CLI:
 
 ${
   <Table>
     <Row header>
-      <Column>Syntax</Column>
-      <Column>Description</Column>
+      <Column left>Syntax</Column>
+      <Column right>Description</Column>
     </Row>
 
     <Row>
-      <Column>
-        <InlineCode noWrap>now deploy [path]</InlineCode>
+      <Column left>
+        <InlineCode noWrap>{`now [path] ...`}</InlineCode>
       </Column>
-      <Column>
+      <Column right>
         When you invoke
         {' '}
         <InlineCode>now</InlineCode>
@@ -50,16 +50,23 @@ ${
         {' '}
         <Now color="#000" />
         {' '}
-        and a new deployment will be created. After that, you'll instantly receive its
+        and a new deployment will be created.<br/><br/>After that, you'll instantly receive its
         URL so that you can share it with other people around the globe.
+        <br/><br/>
+        The {<InlineCode>{`[path]`}</InlineCode>} can either be a file (leads to a static deployment) or
+        a directory (the deployment type will be determined depending
+        on the contents).
+        <br/><br/>
+        If you want to deploy multiple paths at
+        once, <GenericLink href="#deploying-multiple-projects-at-once">read this</GenericLink>.
       </Column>
     </Row>
 
     <Row>
-      <Column>
+      <Column left>
         <InlineCode noWrap>now ls|list [app]</InlineCode>
       </Column>
-      <Column>
+      <Column right>
         Show a list of all deployments. If
         {' '}
         <InlineCode>[app]</InlineCode>
@@ -70,10 +77,10 @@ ${
     </Row>
 
     <Row>
-      <Column>
+      <Column left>
         <InlineCode noWrap>now rm|remove [id]</InlineCode>
       </Column>
-      <Column>
+      <Column right>
         Remove a deployment from our platform. The
         {' '}
         <InlineCode>[id]</InlineCode>
@@ -91,10 +98,10 @@ ${
     </Row>
 
     <Row>
-      <Column>
+      <Column left>
         <InlineCode noWrap>now ln|alias [id] [url]</InlineCode>
       </Column>
-      <Column>
+      <Column right>
         Let's you configure an alias for an existing deployment. You can read more about how
         to take the maximum of functionality out of this sub command
         {' '}
@@ -106,10 +113,10 @@ ${
     </Row>
 
     <Row>
-      <Column>
+      <Column left>
         <InlineCode noWrap>now domains [name]</InlineCode>
       </Column>
-      <Column>
+      <Column right>
         Allows you to manage your domain names directly from the command line (before using
         them as aliases with
         {' '}
@@ -124,8 +131,8 @@ ${
     </Row>
 
     <Row>
-      <Column><InlineCode noWrap>now certs [cmd]</InlineCode></Column>
-      <Column>
+      <Column left><InlineCode noWrap>now certs [cmd]</InlineCode></Column>
+      <Column right>
         By default,
         {' '}
         <Now color="#000" />
@@ -140,10 +147,10 @@ ${
     </Row>
 
     <Row>
-      <Column>
+      <Column left>
         <InlineCode noWrap>now secrets [name]</InlineCode>
       </Column>
-      <Column>
+      <Column right>
         <InternalLink href="/docs/features/env-and-secrets">
           Read more
         </InternalLink>
@@ -151,8 +158,8 @@ ${
     </Row>
 
     <Row>
-      <Column><InlineCode noWrap>now dns [name]</InlineCode></Column>
-      <Column>
+      <Column left><InlineCode noWrap>now dns [name]</InlineCode></Column>
+      <Column right>
         <InternalLink href="/docs/features/dns">
           Read more
         </InternalLink>
@@ -160,8 +167,8 @@ ${
     </Row>
 
     <Row>
-      <Column><InlineCode noWrap>now open</InlineCode></Column>
-      <Column>
+      <Column left><InlineCode noWrap>now open</InlineCode></Column>
+      <Column right>
         Running this sub command will open the latest deployment of the project within the current
         directory in your default browser (aliases won't be respected).
       </Column>
@@ -169,29 +176,48 @@ ${
   </Table>
 }
 
-### Administrative
+#### Deploying Multiple Paths at Once
 
-Help you to manage your account straight from your terminal:
+By default, running ${<InlineCode>now</InlineCode>} will
+deploy the current working directory. In order to deploy
+a different path, pass it to
+the command:
+
+${<TerminalInput>{`now [path]`}</TerminalInput>}
+
+In certain cases, however, you might want to deploy multiple
+files or directories at once. This works the
+same way – just pass more paths to the command:
+
+${<TerminalInput>{`now [path] [path] ...`}</TerminalInput>}
+
+If you pass more than one path, all of them will be uploaded
+and bundled into a single static deployment on the server. The
+result will be a single URL.
+
+### Administrative Commands
+
+Manage your account straight from your terminal:
 
 ${
   <Table>
     <Row header>
-      <Column>Syntax</Column>
-      <Column>Description</Column>
+      <Column left>Syntax</Column>
+      <Column right>Description</Column>
     </Row>
 
     <Row>
-      <Column><InlineCode noWrap>now billing|cc</InlineCode></Column>
-      <Column>
+      <Column left><InlineCode noWrap>now billing|cc</InlineCode></Column>
+      <Column right>
         Easily add or remove credits cards from your account and adjust billing methods.
       </Column>
     </Row>
 
     <Row>
-      <Column>
+      <Column left>
         <InlineCode noWrap>now upgrade|downgrade [plan]</InlineCode>
       </Column>
-      <Column>
+      <Column right>
         Switch your plan from within the command line interface. Even after the command is run,
         we don't require you to use a web interface. The whole process happens directly in your terminal.
       </Column>
