@@ -253,7 +253,7 @@ ${<InputTable>
     <BoldCell>alias</BoldCell>
     <TypeCell>String</TypeCell>
     <BooleanCell status={true} />
-    <Cell>The alias we want to assign to the deploymed defined in the URL.</Cell>
+    <Cell>The alias we want to assign to the deployment defined in the URL.</Cell>
   </Row>
 </InputTable>}
 
