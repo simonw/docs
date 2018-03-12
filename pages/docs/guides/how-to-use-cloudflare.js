@@ -19,7 +19,7 @@ In this guide, we are looking at how we can use [Cloudflare](https://www.cloudfl
 
 ## Cloudflare as a DNS Server
 
-Here we'll be using Cloudflare as a pure DNS service. We setup a few DNS records, which allows your domain to work with ${<Now color="#000"/>}.
+Here we'll be using Cloudflare as a pure DNS service. We setup a few DNS records, which allow your domain to work with ${<Now color="#000"/>}.
 
 > These steps are valid for any external DNS service, not just Cloudflare.
 
@@ -54,7 +54,7 @@ ${<Now color="#000"/>} we can add a CNAME record which allows Cloudflare to dire
 > You can also use @ as the Name of the CNAME record. Then, the record applies for the root domain, \`my-app.work\`.
 
 
-Make sure to **uncheck** the cloud symbol for the Record. So, Cloudflare only act as a DNS server for this sub domain.
+Make sure to **uncheck** the cloud symbol for the Record. So, Cloudflare only acts as a DNS server for this sub domain.
 (It should look like the below)
 
 ${
@@ -79,7 +79,7 @@ For the next sub-domain, you only need to follow Step 2 and 3. Setup (Step 1) is
 
 ## Cloudflare as a Proxy Server
 
-In the above case, Cloudflare only act as a DNS server. It simply forwards the traffic to ${<Now color="#000"/>} via DNS. With this mode, Cloudflare accept the traffic and act as a proxy server. This allow Cloudflare to do interesting things like OneClick SSL, DDOS protection, CDN features and more.
+In the above case, Cloudflare only acts as a DNS server. It simply forwards the traffic to ${<Now color="#000"/>} via DNS. With this mode, Cloudflare accepts the traffic and acts as a proxy server. This allows Cloudflare to do interesting things like OneClick SSL, DDOS protection, CDN features and more.
 
 To get started, we need to apply all of the above steps. Then, go through the following steps:
 
