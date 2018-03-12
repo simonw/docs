@@ -319,6 +319,11 @@ ${<OutputTable>
     <Cell>A number containing the date when the deployment was created (<i>in timestamp</i>).</Cell>
   </Row>
   <Row>
+    <BoldCell>creator</BoldCell>
+    <TypeCell>Map</TypeCell>
+    <Cell>A map with the ID of the user who created the deployment.</Cell>
+  </Row>
+  <Row>
     <BoldCell>state</BoldCell>
     <TypeCell>Enum</TypeCell>
     <Cell>A string with the current deployment state, it could be one of the following <InlineCode>DEPLOYING</InlineCode>, <InlineCode>DEPLOYMENT_ERROR</InlineCode>, <InlineCode>BOOTED</InlineCode>, <InlineCode>BUILDING</InlineCode>, <InlineCode>READY</InlineCode>, <InlineCode>BUILD_ERROR</InlineCode> or <InlineCode>FROZEN</InlineCode></Cell>
@@ -374,7 +379,10 @@ ${<Code>{`{
       "uid": "7Npest0z1zW5QVFfNDBId4BW",
       "name": "project-a",
       "url": "project-bfzfxvjaewj.now.sh",
-      "created": "1460801613968"
+      "created": "1460801613968",
+      "creator": {
+        "uid": "2qDDuGFTWXBLDNnqZfWPDp1A"
+      },
       "state": "READY",
       "type": "NPM",
       "scale": {
@@ -387,7 +395,10 @@ ${<Code>{`{
       "uid": "dOgCUIoovYiYmXbrLX0h9qDk",
       "name": "project-b",
       "url": "project-b-iipihlfrpa.now.sh",
-      "created": "1462738579605"
+      "created": "1462738579605",
+      "creator": {
+        "uid": "2qDDuGFTWXBLDNnqZfWPDp1A"
+      },
       "state": "BUILD_ERROR",
       "type": "NPM",
       "scale": {
@@ -400,6 +411,9 @@ ${<Code>{`{
         "name": "project-c",
         "url": "project-c-mqqsssshze.now.sh",
         "created": "1505254885404",
+        "creator": {
+          "uid": "2qDDuGFTWXBLDNnqZfWPDp1A"
+        },
         "state": "FROZEN",
         "type": "NPM",
         "scale": {
