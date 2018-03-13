@@ -86,7 +86,7 @@ ${<InputTable>
     <BoldCell>engines</BoldCell>
     <TypeCell>String</TypeCell>
     <BooleanCell status={false} />
-    <Cell>A string with the desired Node.js version (<i>only for NPM deployments</i>).</Cell>
+    <Cell>A map with the desired Node.js version (<i>only for NPM deployments</i>) defined as the package.json engines key.</Cell>
   </Row>
   <Row>
     <BoldCell>sessionAffinity</BoldCell>
@@ -156,7 +156,7 @@ ${<InputTable>
 Example request:
 
 ${<Request
-  url="https://api.zeit.co/v2/now/deployments"
+  url="https://api.zeit.co/v3/now/deployments"
   method="GET"
   headers={{
     Authorization: `Bearer ${TOKEN}`,
@@ -183,7 +183,9 @@ ${<Request
     ],
     "deploymentType": "NPM",
     "registryAuthToken": "this-is-my-npm-token",
-    "engines": "^8.0.0",
+    "engines": {
+      "node": "^8.0.0"
+    },
     "sessionAffinity": "ip"
   }}
 />}
