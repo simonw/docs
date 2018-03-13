@@ -34,7 +34,7 @@ ${<Endpoint method="POST" url="/v3/now/deployments" />}
 
 Create a new deployment on the fly by supplying all the required data.
 
-Before you create the deployment you need to ${<InternalLink href="/api#endpoints/deployments/upload-deployment-files">upload any required files</InternalLink>} when they cannot be posted at once.
+Before you create the deployment, you need to ${<InternalLink href="/api#endpoints/deployments/upload-deployment-files">upload any required files</InternalLink>} when they cannot be posted at once.
 
 > **NOTE:** The code and logs under the OSS plan will be public.
 
