@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import Section, { components } from '../../section'
 import { Code, InlineCode } from '../../../text/code'
-import { InternalLink } from '../../../text/link'
+import { ExternalLink, InternalLink } from '../../../text/link'
 import {
   OutputTable,
   InputTable,
@@ -86,7 +86,7 @@ ${<InputTable>
     <BoldCell>engines</BoldCell>
     <TypeCell>String</TypeCell>
     <BooleanCell status={false} />
-    <Cell>A map with the desired Node.js version (<i>only for NPM deployments</i>) defined as the package.json engines key.</Cell>
+    <Cell>A map with the desired Node.js version (<i>only for NPM deployments</i>) defined as the <ExternalLink href="https://docs.npmjs.com/files/package.json#engines">package.json engines</ExternalLink> key.</Cell>
   </Row>
   <Row>
     <BoldCell>sessionAffinity</BoldCell>
