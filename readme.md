@@ -24,7 +24,7 @@ Then you can run the app with:
 npm run dev
 ~~~
 
-Now the documentation is running at http://localhost:5800
+Now the documentation is running at http://localhost:5800/docs and https://localhost:5800/api.
 
 ### Editing Docs Content
 
