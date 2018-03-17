@@ -32,7 +32,7 @@ specified using the ${<InlineCode>--local-config</InlineCode>} flag in Now CLI).
 
 You can choose between creating a separate file for configuring Now (named ${<InlineCode>now.json</InlineCode>}) or
 using the ${<InlineCode>package.json</InlineCode>} file for this (if it's a Node.js project). Please note that
-it's **not possible to add both files** to a project. If both exist, you'll be asked to remove one.
+it's **not possible to use both methods to configure Now** for a given project. If you use ${<InlineCode>now.json</InlineCode>}, you can't include the \`now\` namespace within package.json, and viceversa.
 
 ### package.json
 
