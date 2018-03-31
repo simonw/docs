@@ -74,7 +74,7 @@ Sometimes, you need to add secrets which has new lines (or any other special cha
 
 Instead, you can encode the secret into [Base64](https://en.wikipedia.org/wiki/Base64) before adding it. Here's how you could do that on Mac/Linux with a single command:
 
-${<TerminalInput>{`now secrets add my-cert $(cat /path/to/cert | base64)`}</TerminalInput>}
+${<TerminalInput>{`now secrets add my-cert "$(cat /path/to/cert | base64)"`}</TerminalInput>}
 
 Before you use the secret inside your app, you need to decode it. Here's how you could do it in a Node.js app.
 
