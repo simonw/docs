@@ -126,6 +126,41 @@ ${
   </Code>
 }
 
+#### \`scale\` (object)
+
+Set [scaling](/docs/features/scaling) rules for your deployment.
+
+As an
+example, the following configuration will ensure it is scaled
+to **at least 1 instance and 10 instances at maxium** in
+our [SFO1](https://sfo.now.sh) datacenter:
+
+${
+  <Code>
+    {`"scale": {
+  "sfo1": {
+    "min": 1,
+    "max": 10
+  }
+}`}</Code>}
+
+In order to automatically scale within a certain datacenter, set
+it to \`auto\`.
+
+The following will instruct your deployment
+to scale **between 0 and 10 instances** within
+the [BRU1](https://bru.now.sh) datacenter:
+
+${
+  <Code>
+    {`"scale": {
+  "bru1": "auto"
+}`}</Code>}
+
+If you want to learn about different way of scaling your
+deployment to multiple regions and datacenters, read
+the [feature guide](/docs/features/scaling).
+
 #### \`dotenv\` (boolean|string)
 
 Read environment variables from [dotenv](https://github.com/motdotla/dotenv) file.

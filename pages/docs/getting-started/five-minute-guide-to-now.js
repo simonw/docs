@@ -27,7 +27,7 @@ domain name of your choice and configure an SSL certificate.
 
 ${
   <Image
-    src={asset(`${IMAGE_ASSETS_URL}/docs/installation/now-desktop.png`)}
+    src={asset(`${IMAGE_ASSETS_URL}/docs/installation/now-desktop-mac.png`)}
     width={550}
     height={380}
   />
