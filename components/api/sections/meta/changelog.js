@@ -8,9 +8,7 @@ import pure from '../../../../lib/pure-component'
 
 const H2 = components.h2
 
-function V2(props) {
-  const TOKEN = props.testingToken ? props.testingToken.token : '$TOKEN'
-
+function Changelog() {
   return (
     <Section
       title="Changelog"
@@ -18,17 +16,109 @@ function V2(props) {
       contents={// prettier-ignore
       [
   [
+      <Container key="container1">{
+      markdown(components)`
+${<Heading>Improved Certificates API</Heading>}
+${<ReleaseDate>RELEASED 10, APRIL 2018</ReleaseDate>}
+${<Deprecated hash="#endpoints/deployments/certificates/list-all-the-certificates">List all the certificates</Deprecated>}
+    `}</Container>
+  ],
+  [
+      <Container key="container2">{
+      markdown(components)`
+The v2 endpoint has been deprecated. Use the ${<GenericLink href="/api#endpoints/certificates/list-all-the-certificates">v3 endpoint</GenericLink>} instead.
+
+Each certificate in the ${<InlineCode>certs</InlineCode>} list now contains
+a ${<InlineCode>cns</InlineCode>} list inside, with Common Names strings as children.
+
+Previously, there was a ${<InlineCode>cn</InlineCode>} field with a
+unique common name string inside.
+    `}</Container>
+  ],
+  [
+      <Container key="container1">{
+      markdown(components)`
+${<Deprecated hash="#endpoints/certificates/get-a-single-certificate">Get a single certificate</Deprecated>}
+    `}</Container>
+  ],
+  [
+      <Container key="container2">{
+      markdown(components)`
+The v2 endpoint has been deprecated. Use the ${<GenericLink href="/api#endpoints/certificates/get-a-single-certificate">v3 endpoint</GenericLink>} instead.
+
+Like the certificates list endpoint, it now returns a ${<InlineCode>cns</InlineCode>} array
+instead of the ${<InlineCode>cn</InlineCode>} string.
+
+    `}</Container>
+  ],
+  [
+      <Container key="container1">{
+      markdown(components)`
+${<Deprecated hash="#endpoints/certificates/submit-a-certificate">Replace a certificate</Deprecated>}
+    `}</Container>
+  ],
+  [
+      <Container key="container2">{
+      markdown(components)`
+The v2 endpoint has been deprecated. Use the ${<GenericLink href="/api#endpoints/certificates/submit-a-certificate">v3 endpoint</GenericLink>} instead. It's now labeled **Submit a Certificate**.
+
+Certificates can no longer be replaced. You can use this ${<InlineCode>PUT</InlineCode>} endpointto upload your own new certificate.
+
+The ${<InlineCode>domains</InlineCode>} field is no longer accpeted. The Common Names
+are extracted from the certificate itself automatically.
+
+    `}</Container>
+  ],
+  [
+      <Container key="container1">{
+      markdown(components)`
+${<Deprecated hash="#endpoints/certificates/delete-a-certificate">Delete a certificate</Deprecated>}
+    `}</Container>
+  ],
+  [
+      <Container key="container2">{
+      markdown(components)`
+The v2 endpoint has been deprecated. Use the ${<GenericLink href="/api#endpoints/certificates/delete-a-certificate">v3 endpoint</GenericLink>} instead.
+
+In order to delete a certificate, the only allowed way is to pass
+its unique identifier.
+
+Previously, it was possible pass a domain name. This was error-prone
+and imprecise as a domain name can be present in multiple
+certificates, as a Common Name (CN).
+    `}</Container>
+  ],
+  [
+      <Container key="container1">{
+      markdown(components)`
+${<Deprecated hash="#endpoints/certificates/create-a-new-certificate">Create a certificate</Deprecated>}
+    `}</Container>
+  ],
+  [
+      <Container key="container2">{
+      markdown(components)`
+The v2 endpoint has been deprecated. Use the ${<GenericLink href="/api#endpoints/certificates/create-a-new-certificate">v3 endpoint</GenericLink>} instead.
+
+We removed the ${<InlineCode>renew</InlineCode>} option. Renewals now
+happen by issuing new certificates, instead of replacing them.
+
+Certificates are now effectively immutable. Our load balancers will
+pick a non-expired suitable certificate to serve your requests
+automatically.
+    `}</Container>
+  ],
+  [
     <Container key="container1">{
     markdown(components)`
-${<Heading>Version 3.0</Heading>}
+${<Heading>Better Public Deployments</Heading>}
 ${<ReleaseDate>RELEASED 14, FEBRUARY 2018</ReleaseDate>}
-${<Deprecated hash="#endpoints/deployments/create-a-new-deployment">Create a new deployment</Deprecated>}
+${<Deprecated hash="#endpoints/create-a-new-deployment">Create a new deployment</Deprecated>}
   `}</Container>
   ],
   [
     <Container key="container2">{
     markdown(components)`
-This endpoint has been deprecated. Use ${<GenericLink href="/api#endpoints/deployments/create-a-new-deployment">v3 endpoint</GenericLink>} instead.
+The v2 endpoint has been deprecated. Use the ${<GenericLink href="/api#endpoints/deployments/create-a-new-deployment">v3 endpoint</GenericLink>} instead.
 
 Starting with this release, the ${<InlineCode>public</InlineCode>} property in
 the POST request for creating the deployment needs to be
@@ -56,28 +146,29 @@ will be sent with ${<InlineCode>public: true</InlineCode>}.
     markdown(components)`
 Endpoint:
 
-${<Code>POST /now/deployments</Code>}
+${<Code>POST /v3/now/deployments</Code>}
 
 Example request **(user is on the OSS plan)**:
 
-${<Code syntax="shell">{`curl -X POST https://api.zeit.co/now/deployments \\
-  -H 'Authorization: Bearer ${TOKEN}' \\
-  -H 'Content-Type: application/json' \\
-  -d '{
-  "package": {
-    "name": "my-instant-deployment",
-    "dependencies": {
-      "sign-bunny": "1.0.0"
+${<Code syntax="shell">{`curl -X POST https://api.zeit.co/v3/now/deployments \
+-H 'Authorization: Bearer $TOKEN' \
+-d '{
+  "name": "my-instant-deployment",
+  "deploymentType": "NPM",
+  "public": true,
+  "files": [
+    {
+      "file": "index.js",
+      "data": "const { Server } = require(\"http\")\\nconst bunny = require(\"sign-bunny\")\\n\\nconst server = Server((req, res) => {\\n  res.setHeader(\"Content-Type\", \"text/plain; charset=utf-8\")\\n  res.end(bunny(\"Hi there!\"))\\n})\\n\\nserver.listen()"
     },
-    "scripts": {
-      "start": "node index"
+    {
+      "file": "package.json",
+      "data": "{\\n  \"name\": \"my-instant-deployment\",\\n  \"dependencies\": {\\n    \"sign-bunny\": \"1.0.0\"\\n  },\\n  \"scripts\": {\\n    \"start\": \"node index\"\\n  }\\n}"
     }
-  },
-  "server/index.js": "require(\\"http\\").Server((req, res) => {\nres.setHeader(\\"Content-Type\\", \\"text/plain; charset=utf-8\\");\nres.end(require(\\"sign-bunny\\")(\\"Hi there!\\"));\n}).listen();"
-}'
-`}</Code>}
+  ]
+}'`}</Code>}
 
-Error response (because ${<InlineCode>public</InlineCode>} is not set):
+Error response (because  ${<InlineCode>public</InlineCode>} is not set):
 
 ${<Code>{`{
   "error": {
@@ -90,7 +181,7 @@ ${<Code>{`{
   [
     <Container key="container1">{
     markdown(components)`
-${<Heading>Version 2.0</Heading>}
+${<Heading>Better Deployments API</Heading>}
 ${<ReleaseDate>RELEASED 31, OCTOBER 2017</ReleaseDate>}
 ${<Deprecated hash="#endpoints/deployments/create-a-new-deployment">Create a new deployment</Deprecated>}
   `}</Container>
@@ -98,7 +189,7 @@ ${<Deprecated hash="#endpoints/deployments/create-a-new-deployment">Create a new
   [
     <Container key="container2">{
     markdown(components)`
-This endpoint has been deprecated. Use ${<GenericLink href="/api#endpoints/deployments/create-a-new-deployment">v2 endpoint</GenericLink>} instead.
+The v1 endpoint has been deprecated. Use the ${<GenericLink href="/api#endpoints/deployments/create-a-new-deployment">v2 endpoint</GenericLink>} instead.
 
 Create a new deployment on the fly by supplying an **:id** in the URL and the necessary file data in the body.
 
@@ -106,46 +197,14 @@ The body contains a special key \`package\` that has the \`package.json\` JSON s
 
 > **NOTE:** The code and logs under the OSS plan will be public.
 
-    `}</Container>,
-    markdown(components)`
-Endpoint:
-
-${<Code>POST /now/deployments</Code>}
-
-Example request:
-
-${<Code syntax="shell">{`curl -X POST https://api.zeit.co/now/deployments \\
-  -H 'Authorization: Bearer ${TOKEN}' \\
-  -H 'Content-Type: application/json' \\
-  -d '{
-  "package": {
-    "name": "my-instant-deployment",
-    "dependencies": {
-      "sign-bunny": "1.0.0"
-    },
-    "scripts": {
-      "start": "node index"
-    }
-  },
-  "server/index.js": "require(\\"http\\").Server((req, res) => {\nres.setHeader(\\"Content-Type\\", \\"text/plain; charset=utf-8\\");\nres.end(require(\\"sign-bunny\\")(\\"Hi there!\\"));\n}).listen();"
-}'
-`}</Code>}
-
-Example request with a successful (**200**) response:
-
-${<Code>{`{
-  "uid": "ChbZiZe84CKtod6rmCIRRvYR",
-  "host": "my-instant-deployment-rrucptrbft.now.sh",
-  "state": "BOOTED"
-}`}</Code>}
-    `
+    `}</Container>
   ]
 ]}
     />
   )
 }
 
-export default pure(V2)
+export default pure(Changelog)
 
 class Container extends React.PureComponent {
   render() {

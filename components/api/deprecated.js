@@ -8,7 +8,6 @@ export default class Deprecated extends React.PureComponent {
     return (
       <div className="container">
         <a href={link}>{children}</a>
-        <div className="deprecated">DEPRECATED</div>
 
         <style jsx>{`
           a {
@@ -22,19 +21,6 @@ export default class Deprecated extends React.PureComponent {
             align-items: center;
             display: flex;
             flex-wrap: wrap;
-          }
-
-          .deprecated {
-            background: #000;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 12px;
-            font-weight: 500;
-            height: 25px;
-            line-height: 25px;
-            margin-left: 5px;
-            width: 100px;
-            text-align: center;
           }
         `}</style>
       </div>
