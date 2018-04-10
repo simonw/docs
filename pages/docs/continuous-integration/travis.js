@@ -24,13 +24,13 @@ In this guide we will setup our CI pipeline to:
 
 ## Get a Now Token
 
-The first thing you need to do is [getting a token for your account](/account/tokens).
+The first thing you'll need is a token for your account. You can get this in the [Tokens section](/account/tokens) of your Account Settings.
 
 Go to the tokens page of your dashboard, underr Account Settings, Tokens.
 
-Enter the name of the new token (e.g. ${<InlineCode>Travis CI</InlineCode>}) and hit enter. A new token will be created which you can copy to your clipboard by clicking ${<InlineCode>Copy</InlineCode>}.
+By entering a name into the input mentioning "Create a new token..." and pressing Enter, a new token will be created which you can copy to your clipboard by clicking ${<InlineCode>Copy</InlineCode>}.
 
-With this token you can use Now with your account everywhere with the following command:
+With this token you can use Now with your account anywhere with the following command:
 
 ${<TerminalInput>now --token $TOKEN</TerminalInput>}
 
@@ -38,11 +38,11 @@ Or the short version:
 
 ${<TerminalInput>now -t $TOKEN</TerminalInput>}
 
-Where ${<InlineCode>$TOKEN</InlineCode>} is the token you got.
+Where ${<InlineCode>$TOKEN</InlineCode>} is the token you copied from your Account Settings.
 
 ## Integrate Travis in your project
 
-Now that you have your token you need to integrate Travis in your project. Create a ${<InlineCode>.travis.yml</InlineCode>} file in the root of your repository.
+Now that you have your token, you need to integrate Travis into your project. Create a ${<InlineCode>.travis.yml</InlineCode>} file in the root of your repository.
 
 Go to the Travis CI site and [add your repository](https://docs.travis-ci.com/user/getting-started/). If it's public you can use [travis-ci.org](https://travis-ci.org), if the repository is private you need to use the paid version under [travis-ci.com](https://travis-ci.com).
 
@@ -109,11 +109,11 @@ ${<Code>{`
 }
 `}</Code>}
 
-With this Now will only deploy the files under the directories ${<InlineCode>.next</InlineCode>}, ${<InlineCode>server</InlineCode>} and ${<InlineCode>static</InlineCode>} and the files ${<InlineCode>package.json</InlineCode>} and ${<InlineCode>yarn.lock</InlineCode>}. You can customize this to add any files which will be required by your application after the build step.
+With this Now will only deploy the files under the directories ${<InlineCode>.next</InlineCode>}, ${<InlineCode>server</InlineCode>}, ${<InlineCode>static</InlineCode>}, and the files ${<InlineCode>package.json</InlineCode>} and ${<InlineCode>yarn.lock</InlineCode>}. You can customize this to add any files which will be required by your application after the build step.
 
 ### Run build on Travis
 
-Now you just need to change your ${<InlineCode>.travis.yml</InlineCode>} file to run the build script, to do this change the ${<InlineCode>script</InlineCode>} part of your file as follow:
+Now you just need to change your ${<InlineCode>.travis.yml</InlineCode>} file to run the build script. To do this, change the ${<InlineCode>script</InlineCode>} part of your file as follows:
 
 ${<Code>{`
 ...
@@ -121,9 +121,9 @@ script: npm run build
 ...
 `}</Code>}
 
-> *Note*: This will make Travis CI run the build script instead of test, you can add a prebuild or postbuild to run tests
+> *Note*: This will make Travis CI run the build script instead of test, you can add a prebuild or postbuild step to run tests
 
-And since you are building your application on Travis you don't want Now to try to build it. To avoid this you can add a simple script to the ${<InlineCode>package.json</InlineCode>}.
+And since you are building your application on Travis, you don't want Now to try to build it. To avoid this you can add a simple script to the ${<InlineCode>package.json</InlineCode>}.
 
 ${<Code>{`
 {
@@ -137,5 +137,5 @@ ${<Code>{`
 }
 `}</Code>}
 
-If that script is defined Now will use it instead of ${<InlineCode>build</InlineCode>}, this lets you define it in order to customize the build step on Now or just avoid it.
+If that script is defined, Now will use it instead of ${<InlineCode>build</InlineCode>}. This lets you define it in order to customize the build step on Now or just avoid it.
 `)
