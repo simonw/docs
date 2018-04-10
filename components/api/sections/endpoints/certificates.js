@@ -19,9 +19,8 @@ function Certificates(props) {
 
   return (
     <Section
-      contents={
-        // prettier-ignore
-        [
+      contents={// prettier-ignore
+      [
   [
     markdown(components)`
 ### List all the certificates
@@ -29,12 +28,13 @@ function Certificates(props) {
   ],
   [
     markdown(components)`
-${<Endpoint method="GET" url="/v2/now/certs" />}
+${<Endpoint method="GET" url="/v3/now/certs" />}
 
 Retrieves a list of certificates issued for the authenticating user or
 information about the certificate issued for the common name specified in the URL.
 
 #### Output
+
 ${<OutputTable>
   <Row>
     <BoldCell>certs</BoldCell>
@@ -53,9 +53,9 @@ ${<OutputTable>
     <Cell>The unique identifier of the certificate.</Cell>
   </Row>
   <Row>
-    <BoldCell>cn</BoldCell>
-    <TypeCell>String</TypeCell>
-    <Cell>The name for which domain the certificate was issued.</Cell>
+    <BoldCell>cns</BoldCell>
+    <TypeCell>List&lt;String&gt;</TypeCell>
+    <Cell>The common names for which domain the certificate was issued.</Cell>
   </Row>
   <Row>
     <BoldCell>created</BoldCell>
@@ -78,7 +78,7 @@ ${<OutputTable>
 Example request:
 
 ${<Request
-  url="https://api.zeit.co/v2/now/certs"
+  url="https://api.zeit.co/v3/now/certs"
   headers={{
     Authorization: `Bearer ${TOKEN}`
   }}
@@ -89,7 +89,7 @@ Example successful (**200**) response:
 ${<Code>{`{
   "certs": [
     {
-      "cn": "testing.zeit.co",
+      "cns": ["testing.zeit.co", "*.zeit.co"],
       "uid": "oAjf6y9pxZgCJyQfrclN",
       "created": "2016-08-23T18:13:09.773Z",
       "expiration": "2016-12-16T16:00:00.000Z",
@@ -106,9 +106,10 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-${<Endpoint method="GET" url="/v2/now/certs/:cn"/>}
+${<Endpoint method="GET" url="/v3/now/certs/:id"/>}
 
-Retrieves the information about the certificate issued for the common name specified in the URL.
+Retrieves the information about the certificate issued for
+certificate id specified in the URL.
 
 #### Output
 ${<OutputTable>
@@ -118,9 +119,9 @@ ${<OutputTable>
     <Cell>The unique identifier of the certificate.</Cell>
   </Row>
   <Row>
-    <BoldCell>cn</BoldCell>
-    <TypeCell>String</TypeCell>
-    <Cell>The name for which domain the certificate was issued.</Cell>
+    <BoldCell>cns</BoldCell>
+    <TypeCell>List&lt;String&gt;</TypeCell>
+    <Cell>The common names for which domain the certificate was issued.</Cell>
   </Row>
   <Row>
     <BoldCell>created</BoldCell>
@@ -143,7 +144,7 @@ ${<OutputTable>
 Example request:
 
 ${<Request
-  url="https://api.zeit.co/v2/now/certs/testing.zeit.co"
+  url="https://api.zeit.co/v3/now/certs/oAjf6y9pxZgCJyQfrclN"
   headers={{
     Authorization: `Bearer ${TOKEN}`
   }}
@@ -152,7 +153,7 @@ ${<Request
 Example successful (200) response:
 
 ${<Code>{`{
-  "cn": "testing.zeit.co",
+  "cns": ["wow.zeit.co"],
   "uid": "oAjf6y9pxZgCJyQfrclN",
   "created": "2016-08-23T18:13:09.773Z",
   "expiration": "2016-12-16T16:00:00.000Z",
@@ -166,24 +167,20 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-${<Endpoint method="POST" url="/v2/now/certs"/>}
+${<Endpoint method="POST" url="/v3/now/certs"/>}
 
-Issue a new certificate for the common names given in body.
+Issues and stores a new certificate for the common names given in 
+the body using **Let's Encrypt**.
+
 The body should contain \`domains\` array and it may contain \`renew\` field to renew an existing certificate.
 
 #### Input
 ${<InputTable>
   <Row>
     <BoldCell>domains</BoldCell>
-    <TypeCell>List</TypeCell>
+    <TypeCell>List&lt;String&gt;</TypeCell>
     <BooleanCell status={true} />
-    <Cell>A list of domains for whose the ceritifcate is being provisioned.</Cell>
-  </Row>
-  <Row>
-    <BoldCell>renew</BoldCell>
-    <TypeCell>Boolean</TypeCell>
-    <BooleanCell status={true} />
-    <Cell>If the certificate is going to be automatically renewed.</Cell>
+    <Cell>A list of Common Names for which the certificate is being provisioned.</Cell>
   </Row>
 </InputTable>}
 
@@ -206,7 +203,7 @@ Example request:
 
 ${<Request
   method="POST"
-  url="https://api.zeit.co/v2/now/certs"
+  url="https://api.zeit.co/v3/now/certs"
   headers={{
     Authorization: `Bearer ${TOKEN}`,
     'Content-Type': 'application/json'
@@ -227,25 +224,19 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-### Replace a certificate
+### Submit a certificate
     `
   ],
   [
     markdown(components)`
-${<Endpoint method="PUT" url="/v2/now/certs" />}
+${<Endpoint method="PUT" url="/v3/now/certs" />}
 
-Replace an existing or create a new certificate entry with a user-supplied certificate.
+Create a new certificate entry with a user-supplied certificate.
 
-The body should contain \`domains\` field containing all the domains the new certificate will be used for, and \`cert\`, private \`key\`, and \`ca\` chain fields in PEM format.
+The body should contain \`cert\`, private \`key\`, and \`ca\` chain fields in PEM format.
 
 #### Input
 ${<InputTable>
-  <Row>
-    <BoldCell>domains</BoldCell>
-    <TypeCell>List</TypeCell>
-    <BooleanCell status={true} />
-    <Cell>A list of domains for whose the ceritifcate is being provisioned.</Cell>
-  </Row>
   <Row>
     <BoldCell>ca</BoldCell>
     <TypeCell>String</TypeCell>
@@ -280,13 +271,12 @@ Example request:
 
 ${<Request
   method="PUT"
-  url="https://api.zeit.co/v2/now/certs"
+  url="https://api.zeit.co/v3/now/certs"
   headers={{
     Authorization: `Bearer ${TOKEN}`,
     'Content-Type': 'application/json'
   }}
   body={{
-    "domains": ["testing.zeit.co"],
     "ca": "PEM formatted CA chain",
     "cert": "PEM formatted certificate",
     "key": "PEM formatted private key"
@@ -307,7 +297,7 @@ ${<Code>{`{
   ],
   [
     markdown(components)`
-${<Endpoint method="DELETE" url="/v2/now/certs/:cn" />}
+${<Endpoint method="DELETE" url="/v3/now/certs/:id" />}
 
 Delete an existing certificate entry. If the certificate entry was
 removed successfully the endpoint will return with code **200** and
@@ -318,15 +308,14 @@ Example request:
 
 ${<Request
   method="DELETE"
-  url="https://api.zeit.co/v2/now/certs/testing.zeit.co"
+  url="https://api.zeit.co/v3/now/certs/zWsFytQUFlkUWaR7nWdwS7xR"
   headers={{
     Authorization: `Bearer ${TOKEN}`
   }}
 />}
     `
   ]
-]
-      }
+]}
     />
   )
 }

@@ -32,7 +32,7 @@ specified using the ${<InlineCode>--local-config</InlineCode>} flag in Now CLI).
 
 You can choose between creating a separate file for configuring Now (named ${<InlineCode>now.json</InlineCode>}) or
 using the ${<InlineCode>package.json</InlineCode>} file for this (if it's a Node.js project). Please note that
-it's **not possible to add both files** to a project. If both exist, you'll be asked to remove one.
+it's **not possible to use both methods to configure Now** for a given project. If you use ${<InlineCode>now.json</InlineCode>}, you can't include the \`now\` namespace within package.json, and viceversa.
 
 ### package.json
 
@@ -125,6 +125,41 @@ ${
 ]`}
   </Code>
 }
+
+#### \`scale\` (object)
+
+Set [scaling](/docs/features/scaling) rules for your deployment.
+
+As an
+example, the following configuration will ensure it is scaled
+to **at least 1 instance and 10 instances at maxium** in
+our [SFO1](https://sfo.now.sh) datacenter:
+
+${
+  <Code>
+    {`"scale": {
+  "sfo1": {
+    "min": 1,
+    "max": 10
+  }
+}`}</Code>}
+
+In order to automatically scale within a certain datacenter, set
+it to \`auto\`.
+
+The following will instruct your deployment
+to scale **between 0 and 10 instances** within
+the [BRU1](https://bru.now.sh) datacenter:
+
+${
+  <Code>
+    {`"scale": {
+  "bru1": "auto"
+}`}</Code>}
+
+If you want to learn about different way of scaling your
+deployment to multiple regions and datacenters, read
+the [feature guide](/docs/features/scaling).
 
 #### \`dotenv\` (boolean|string)
 

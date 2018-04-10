@@ -67,5 +67,5 @@ All in all, sleeping deployments are here to reduce the effort the system has to
 
 Sleeping deployments will wake up in a matter of seconds once a request comes in. The visitor won't experience any errors, because the request will be kept alive until the deployment has woken up.
 
-Eventually, we'll be working on adding support for non-sleeping deployments!
+You can prevent sleep if the number of minimum instances is set to a value larger than zero, as described in [App Lifecycle and Scalability](https://zeit.co/docs/guides/app-lifecycle-and-scalability).
 `)

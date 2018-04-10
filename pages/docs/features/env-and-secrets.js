@@ -128,7 +128,7 @@ ${
 
 How about other programming languages? The same mechanism applies to any project with a \`Dockerfile\`. The variables you include will be available to your \`RUN\` and \`CMD\` instructions.
 
-You can even prevent ${<InternalLink href="/docs/deployment-types/node#ignoring-[object-object]">prevent</InternalLink>} \`devDependencies\` from being installed using a environment variable!
+You can even ${<InternalLink href="/docs/deployment-types/node#ignoring-devdependencies">prevent</InternalLink>} \`devDependencies\` from being installed using a environment variable!
 
 Finally, our ${<InternalLink href="/api">API</InternalLink>} users will find the new /now/secrets REST endpoints useful.
 
