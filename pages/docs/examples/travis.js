@@ -46,7 +46,7 @@ ${
     ...
     "now": {
         "name": "example",
-        "alias": "example.com
+        "alias": "example.com"
         }
     ...
 }`}</Code>}
