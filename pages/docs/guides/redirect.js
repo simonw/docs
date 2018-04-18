@@ -37,7 +37,7 @@ Now we are going to deploy a [simple web app](https://github.com/now-examples/re
 To deploy this, run the following command:<br/>
 (Make sure to add a trailing slash to the redirect url as shown below.)
 
-${<TerminalInput>now -e REDIRECT_URL=http://mycompany.com/ now-examples/redirect</TerminalInput>}
+${<TerminalInput>now -e REDIRECT_URL=https://mycompany.com/ now-examples/redirect</TerminalInput>}
 
 Then, you will get a deployment url like this: \`https://now-redirect-otytioldup.now.sh\`.
 

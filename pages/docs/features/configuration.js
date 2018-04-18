@@ -132,7 +132,7 @@ Set [scaling](/docs/features/scaling) rules for your deployment.
 
 As an
 example, the following configuration will ensure it is scaled
-to **at least 1 instance and 10 instances at maxium** in
+to **at least 1 instance and 5 instances at maxium** in
 our [SFO1](https://sfo.now.sh) datacenter:
 
 ${
@@ -140,21 +140,24 @@ ${
     {`"scale": {
   "sfo1": {
     "min": 1,
-    "max": 10
+    "max": 5
   }
 }`}</Code>}
 
-In order to automatically scale within a certain datacenter, set
-it to \`auto\`.
+You can also instruct Now to automatically
+pick the maximum number of instances.
 
 The following will instruct your deployment
-to scale **between 0 and 10 instances** within
+to scale **between 1 and 10 instances** within
 the [BRU1](https://bru.now.sh) datacenter:
 
 ${
   <Code>
     {`"scale": {
-  "bru1": "auto"
+  "bru1": {
+    "min": 1,
+    "max": "auto"
+  }
 }`}</Code>}
 
 If you want to learn about different way of scaling your
