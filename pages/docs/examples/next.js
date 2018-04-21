@@ -19,9 +19,7 @@ export default withDoc({
 
 When it comes to complex, dynamic applications which need to serve a lot of purposes, we were always driven by finding the easiest and most efficient way of handling the process of creating such a new app.
 
-That's the reason why we combined all of our experiences and created [Next.js](https://zeit.co/blog/next), a tiny toolbelt made out of commands which abstracts away all of the complicated machinery required for creating a [React](http://reactjs.com/) application.
-
-For the exact details, read [this post](https://zeit.co/blog/next).
+That's the reason why we combined our experiences and created [Next.js](https://zeit.co/blog/next), a project which abstracts away all of the complicated machinery required for creating a server-rendered or statically exported [React](http://reactjs.com/) application. For more information, read [this post](https://zeit.co/blog/next).
 
 ## Requirements
 
