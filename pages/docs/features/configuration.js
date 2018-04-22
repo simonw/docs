@@ -272,7 +272,7 @@ By default, it's pointing to \`https://api.zeit.co\`, which always points to
 the right location depending on where you're connecting from (Anycast).
 
 **Important**: As indicated by the \`sh.\` prefix, this configuration
-propery needs to be set under the \`sh\` provider scope inside the global config file.
+property needs to be set under the \`sh\` provider scope inside the global config file.
 
 #### \`desktop.updateCLI\` (boolean)
 
