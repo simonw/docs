@@ -36,3 +36,5 @@ app.prepare().then(() => {
     logger.log(`> Ready on http://localhost:${port}`)
   })
 })
+
+
