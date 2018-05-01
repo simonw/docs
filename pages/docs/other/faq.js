@@ -62,9 +62,10 @@ ${<TerminalInput>now && now alias && now rm my-app --safe --yes</TerminalInput>}
 
 ## How Do I Pick the Deployment Region(S) for My Application?
 
-At the moment, ${<Now color="#000" />} only has support for one region; [SFO](https://sfo.now.sh).
+Now will deploy to the nearest region available automatically by default. You can override this behavior either
 
-Soon we will be enabling another region in Europe; [BRU](https://bru.now.sh). In the future, we will try and extend beyond them both.
+- [Configuring it while deploying](https://zeit.co/docs/features/scaling#scaling-while-deploying)
+- [Configuring it after deploying](https://zeit.co/docs/features/scaling#scaling-after-deploying)
 
 ## How Do I Change My Account's Email Address?
 
