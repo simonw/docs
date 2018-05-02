@@ -145,7 +145,7 @@ This behaviour can be completely avoided using the \`now scale\` command as desc
 
 ## Can I Remove or Delete a Team?
 
-It is not currently possible to delete a team. If you keep it on the [OSS plan](/pricing), it can be safely ignored and you will not be charged.
+You can delete a team by going to the 'Identity' section of the team's settings. Please note that this action is irreversible.
 
 ## How Do I Create a Redirect from www.mysite.com to mysite.com?
 
@@ -179,11 +179,14 @@ Check ["Why does my deployment occasionally have long response times?"](/docs/ot
 
 ## If I Need a Special Invoice How Do I Get It?
 
-We send a receipt to your email address for every card transaction. For special invoicing requests, please contact us at [support@zeit.co](support@zeit.co?subject=Invoice) with the following information:
+We send a receipt to your email address for every card transaction including a link to download the invoice as a PDF. Your invoice can also be downloaded from the [Usage section of your dashboard](https://zeit.co/dashboard/usage). For special invoicing requests, please contact us at [support@zeit.co](support@zeit.co?subject=Invoice) with the following information:
 
 - Company name
-- Billing contact (full name)
-- Address
+- Billing address
+  - Country
+  - City
+  - Postal Code
+  - Address
 - Contact phone number
 - VAT number (if applicable)
 - Any additional information you may require
@@ -256,7 +259,7 @@ The actual deletion of a deployment could take around a minute, but sometimes th
 
 ## Does Now Supports Wildcard Subdomains?
 
-We do not currently support wildcard subdomains
+We have support for [wildcard SSL certificates](https://zeit.co/blog/wildcard-certs), but wildcard subdomains are not currently supported.
 
 ## Can I Have a Refund for a Domain Purchase?
 
@@ -272,7 +275,7 @@ Yes, we do. Let us know if you'd like our help at [enterprise@zeit.co](enterpris
 
 ## Is It Possible to Remove the Logs of a Deployment?
 
-At the moment this is not possible
+At the moment this is not possible.
 
 ## Is It Possible to Download the Files or Code of My Deployments?
 
@@ -323,5 +326,17 @@ Attacks come in very different forms and sizes. Therefore, we offer more advance
 ZEIT's login is serverless. You just need your email address and don't need to remember yet another password.
 
 For custom requirements you can contact us at [enterprise@zeit.co](mailto:enterprise@zeit.co?subject=Advanced%20Authentication).
+
+## Does Now Offer Support for IPv6?
+
+We do not currently offer support for IPv6.
+
+## Does Now Block Outgoing SMTP Connections in Any Way?
+
+Now does not block any incoming or outgoing requests.
+
+## Can I Use a 3-D Secure credit card with ZEIT?
+
+We do not currently offer support for the 3-D Secure protocol.
 
 `)
