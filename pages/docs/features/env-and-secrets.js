@@ -137,5 +137,5 @@ Finally, our ${<InternalLink href="/api">API</InternalLink>} users will find the
 By default, all deployments expose these environment variables:
 
 * **NOW**: Set to \`true\`, for detecting ${<Now color="#000"/>}.
-* **NOW_URL**: Contains the unique URL of your deployment. Even if you deployment was aliased, this variable will always contain the URL with the \`.now.sh\` suffix.
+* **NOW_URL**: Contains the unique URL of your deployment. Even if your deployment was aliased, this variable will always contain the URL with the \`.now.sh\` suffix.
 `)
