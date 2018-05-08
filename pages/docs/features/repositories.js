@@ -102,7 +102,7 @@ ${
 ## How It Works
 
 * Behind the curtains, the command line interface (now) will firstly clone the repository to your local device (in a hidden directory).<br/><br/>
-This ensures that even private repositories (or such that require a special form of authentication) will get cloned automatically without you having to specify any credentials. In addition, it's much more secure than cloning the code on the platform, because our system doesn't need to move any of your sensible authentication data to our servers.
+This ensures that even private repositories (or such that require a special form of authentication) will get cloned automatically without you having to specify any credentials. In addition, it's much more secure than cloning the code on the platform, because our system doesn't need to move any of your sensitive authentication data to our servers.
 
 * Afterwards, the regular mechanism for handling the upload of your files will be applied to the local directory that contains a clone of the repository you've defined before.
 `)
