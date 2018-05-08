@@ -91,7 +91,7 @@ To add your SSL certificate to be used for your domain, use the following comman
 
 ${
   <TerminalInput>
-    now certs --key example.ai.key --crt example.ai.crt --ca ssl_provider.crt example.ai
+    now certs add --key example.ai.key --crt example.ai.crt --ca ssl_provider.crt
   </TerminalInput>
 }
 
