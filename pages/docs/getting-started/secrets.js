@@ -12,6 +12,7 @@ import Now from '../../../components/now/now'
 // prettier-ignore
 export default withDoc({
   title: 'Secrets',
+  description: 'Configuring your apps with environment variables that shouldn\'t be public using Now Secrets',
   date: '6 August 2017',
   authors: [arunoda],
   editUrl: 'pages/docs/getting-started/secrets.js',

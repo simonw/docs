@@ -18,6 +18,7 @@ const updateMessage = {
 // prettier-ignore
 export default withDoc({
   title: 'Updating Now CLI',
+  description: 'Updating Now CLI using Now Desktop or a package manager',
   date: '20 Jan 2018 11:34 AM PDT',
   authors: [ leo ],
   editUrl: 'pages/docs/guides/updating-now-cli.js',

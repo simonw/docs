@@ -12,6 +12,7 @@ import { InternalLink } from '../../../components/text/link'
 // prettier-ignore
 export default withDoc({
   title: 'Building a Realtime Chat Webapp',
+  description: 'Creating a chat webapp and hosting it with Now',
   date: '23 Feb 2017',
   authors: [leo],
   editUrl: 'pages/docs/examples/chat.js',

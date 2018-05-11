@@ -10,6 +10,7 @@ import Now from '../../../components/now/now'
 // prettier-ignore
 export default withDoc({
   title: 'Logs',
+  description: 'Using Now logs to keep track of your deployment activity',
   date: '4 August 2017',
   authors: [arunoda],
   editUrl: 'pages/docs/getting-started/logs.js',

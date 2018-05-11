@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { withRouter } from 'next/router'
 import NextHead from 'next/head'
 import NProgress from 'nprogress'
 import debounce from 'lodash.debounce'
@@ -40,18 +41,22 @@ function updateTitle(newTitle) {
 
 class Head extends React.PureComponent {
   componentDidMount() {
-    updateTitle(this.props.title)
+    updateTitle(
+      this.props.titlePrefix + this.props.title + this.props.titleSuffix
+    )
   }
 
   render() {
     const titlePrefix =
       null != this.props.titlePrefix ? this.props.titlePrefix : 'ZEIT – '
+    const titleSuffix =
+      null != this.props.titleSuffix ? this.props.titleSuffix : ' – ZEIT'
     const ogDescription = this.props.ogDescription || this.props.description
     const { darkBg } = this.context
     return (
       <div>
         <NextHead>
-          <title>{titlePrefix + this.props.title}</title>
+          <title>{titlePrefix + this.props.title + titleSuffix}</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
@@ -61,33 +66,53 @@ class Head extends React.PureComponent {
             content={this.props.image ? 'summary_large_image' : 'summary'}
           />
           <meta name="twitter:site" content="@zeithq" />
+          <meta property="og:site_name" content="ZEIT Documentation" />
+          <meta property="og:type" content="website" />
           <meta
-            name="og:title"
-            content={this.props.ogTitle || this.props.title}
+            property="og:title"
+            content={
+              titlePrefix +
+              (this.props.ogTitle || this.props.title) +
+              titleSuffix
+            }
           />
+          <meta property="og:locale" content="en" />
           <meta
-            name="og:url"
-            content={this.props.url || 'https://zeit.co/now'}
+            property="og:url"
+            content={
+              this.props.url ||
+              `https://zeit.co${this.props.router.asPath}` ||
+              'https://zeit.co/docs'
+            }
+          />
+          <link
+            rel="canonical"
+            href={
+              this.props.url ||
+              `https://zeit.co${this.props.router.asPath}` ||
+              'https://zeit.co/docs'
+            }
           />
           {this.props.description ? (
             <meta name="description" content={this.props.description} />
           ) : null}
           {ogDescription ? (
-            <meta name="og:description" content={ogDescription} />
+            <meta property="og:description" content={ogDescription} />
           ) : null}
           <meta
-            name="og:image"
+            property="og:image"
             content={
               this.props.image || `${IMAGE_ASSETS_URL}/zeit/twitter-card.png`
             }
           />
           {this.props.video
             ? [
-                <meta name="og:type" content="video" key="0" />,
-                <meta name="og:video" content={this.props.video} key="1" />,
-                <meta name="og:video:type" content="video/mp4" key="2" />
+                <meta property="og:type" content="video" key="0" />,
+                <meta property="og:video" content={this.props.video} key="1" />,
+                <meta property="og:video:type" content="video/mp4" key="2" />
               ]
             : null}
+
           <link
             rel="apple-touch-icon"
             sizes="57x57"
@@ -171,6 +196,49 @@ class Head extends React.PureComponent {
             href={`${IMAGE_ASSETS_URL}/favicon/favicon.ico`}
           />
           <meta name="theme-color" content="#000" />
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
+            {
+              "@type": "WebPage",
+              "url": "${this.props.url ||
+                `https://zeit.co${this.props.router.asPath}` ||
+                'https://zeit.co/docs'}",
+              "headline": "${this.props.ogTitle ||
+                this.props.title ||
+                'ZEIT Documentation'}",
+              ${this.props.description
+                ? '"description": "' + this.props.description + '",'
+                : null}
+              "image": "${this.props.image ||
+                `${IMAGE_ASSETS_URL}/zeit/twitter-card.png`}",
+              "name": "${titlePrefix +
+                (this.props.ogTitle ||
+                  this.props.title ||
+                  'ZEIT Documentation') +
+                titleSuffix}",
+              "dateModified": "${this.props.lastEdited.toISOString()}",
+              "lastReviewed": "${this.props.lastEdited.toISOString()}",
+              "author": {
+                "@type": "Person",
+                "name": "ZEIT"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "${`${IMAGE_ASSETS_URL}/favicon/favicon-96x96.png`}"
+                },
+                "name": "ZEIT"
+              },
+              "@context": "http:\/\/schema.org"
+            }
+          `
+            }}
+          />
+
           {this.props.children}
         </NextHead>
         <style jsx global>
@@ -221,4 +289,4 @@ Head.contextTypes = {
   darkBg: PropTypes.bool
 }
 
-export default Head
+export default withRouter(Head)

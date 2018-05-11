@@ -9,6 +9,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Managing SSL Certificates',
+  description: 'SSL Certificates for your Now deployments and how you can easily manage them',
   date: '15 Mar 2017',
   authors: [leo],
   editUrl: 'pages/docs/features/certs.js',

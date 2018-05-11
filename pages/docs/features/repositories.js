@@ -12,6 +12,7 @@ import { P } from '../../../components/text/paragraph'
 // prettier-ignore
 export default withDoc({
   title: 'Deploying Git Repositories',
+  description: 'Targetting and deploying a Git repository with Now',
   date: '12 Mar 2017',
   authors: [leo],
   editUrl: 'pages/docs/features/repositories.js',

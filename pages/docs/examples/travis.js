@@ -7,6 +7,7 @@ import { Code, InlineCode } from '../../../components/text/code'
 // prettier-ignore
 export default withDoc({
   title: 'Automate Deployment with Travis CI',
+  description: 'Using Travis CI to automate your Now deployments',
   date: '04 November 2017',
   authors: [devisscher],
   editUrl: 'pages/docs/examples/travis.js',

@@ -9,6 +9,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Simplifying Microservices with Path Alias',
+  description: 'Aliasing microservices to exist in different locations with your domain on Now',
   date: '15 Mar 2017',
   authors: [leo, jamo],
   editUrl: 'pages/docs/features/path-aliases.js',

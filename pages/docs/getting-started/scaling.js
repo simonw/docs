@@ -11,6 +11,7 @@ import Now from '../../../components/now/now'
 // prettier-ignore
 export default withDoc({
   title: 'Scaling',
+  description: 'Handling increased traffic by scaling your Now deployments',
   date: '10 August 2017',
   authors: [arunoda],
   editUrl: 'pages/docs/getting-started/scaling.js',

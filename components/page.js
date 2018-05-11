@@ -13,7 +13,7 @@ class Page extends React.Component {
   render() {
     const { darkBg, children } = this.props
     return (
-      <div>
+      <div itemScope itemType="http://schema.org/WebPage">
         {children}
         <Head>
           <style
@@ -48,21 +48,19 @@ class Page extends React.Component {
               color: ${darkBg ? '#fff' : '#000'};
             }
 
-            ${
-              darkBg
-                ? `
+            ${darkBg
+              ? `
               ::selection {
                 background-color: #f81ce5;
                 color: #fff;
               }
             `
-                : `
+              : `
               ::selection {
                 background-color: #79FFE1;
                 color: #000;
               }
-            `
-            }
+            `}
           `
             }}
           />

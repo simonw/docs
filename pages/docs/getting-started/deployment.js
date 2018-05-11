@@ -12,6 +12,7 @@ import Now from '../../../components/now/now'
 // prettier-ignore
 export default withDoc({
   title: 'Deployment',
+  description: 'How to setup and deploy Node.js apps, Docker apps, or static websites with Now',
   date: '1 August 2017',
   authors: [arunoda],
   editUrl: 'pages/docs/getting-started/deployment.js',

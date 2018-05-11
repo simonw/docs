@@ -10,6 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Deploying Node.js Apps',
+  description: 'What counts as a Node.js App for Now deployments and more information about them',
   date: '09 March 2017',
   authors: [leo],
   editUrl: 'pages/docs/deployment-types/node.js',

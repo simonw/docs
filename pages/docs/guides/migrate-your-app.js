@@ -12,6 +12,7 @@ import {
 // prettier-ignore
 export default withDoc({
   title: 'Migrate Your App to Now Without a Downtime',
+  description: 'Migrating your app from other hosting services to Now without incurring downtime',
   date: '04 Apr 2017 9:42 AM PDT',
   authors: [jamo, rauchg],
   editUrl: 'pages/docs/guides/migrate-your-app.js',

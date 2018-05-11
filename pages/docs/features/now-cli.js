@@ -11,6 +11,7 @@ import { Table, Row, Column } from '../../../components/table'
 // prettier-ignore
 export default withDoc({
   title: 'Now\'s Command Line Interface',
+  description: 'Using Now CLI to create new deployments or control existing ones',
   date: '09 Mar 2017',
   authors: [leo, rauchg],
   editUrl: 'pages/docs/features/now-cli.js',

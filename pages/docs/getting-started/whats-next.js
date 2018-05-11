@@ -6,6 +6,7 @@ import Now from '../../../components/now/now'
 // prettier-ignore
 export default withDoc({
   title: 'What\'s Next',
+  description: 'What\'s next after you\'ve got started with Now',
   date: '10 August 2017',
   authors: [arunoda],
   editUrl: 'pages/docs/getting-started/whats-next.js',

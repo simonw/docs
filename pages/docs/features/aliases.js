@@ -17,6 +17,7 @@ import {
 // prettier-ignore
 export default withDoc({
   title: 'Aliases and Domains',
+  description: 'All you need to know about assigning domains to your Now deployments',
   date: '21 Feb 2017',
   authors: [rauchg],
   editUrl: 'pages/docs/features/aliases.js',

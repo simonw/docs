@@ -11,9 +11,10 @@ import { leo } from '../../../lib/data/team'
 // prettier-ignore
 export default withDoc({
   title: 'Restrictions',
+  description: 'A guide to what restrictions you have when deploying to Now',
   date: '20 Mar 2018',
   authors: [leo],
-  editUrl: 'pages/docs/other/billing.js',
+  editUrl: 'pages/docs/other/restrictions.js',
 })(markdown(components)`
   The purpose of this page is to guide you through
   all the potential restrictions that might be

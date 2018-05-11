@@ -10,6 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'App Lifecycle and Scalability',
+  description: 'A guide for your app\'s deployment lifecycle on Now and how to scale that deployment',
   date: '09 March 2017',
   authors: [rase, rauchg, jamo],
   editUrl: 'pages/docs/guides/app-lifecycle-and-scalability.js',

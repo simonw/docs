@@ -12,6 +12,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Building a Super Basic Next.js Application',
+  description: 'Building and deploying a basic Next.js application with Now',
   date: '24 Feb 2017',
   authors: [leo],
   editUrl: 'pages/docs/examples/next.js',

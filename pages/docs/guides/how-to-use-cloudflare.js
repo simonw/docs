@@ -10,6 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'How to Use Cloudflare with Now',
+  description: 'Using Cloudflare as a DNS Server or Proxy Server with Now',
   date: '11 Jan 2018 11:34 AM PDT',
   authors: [arunoda],
   editUrl: 'pages/docs/guides/how-to-use-cloudflare.js',

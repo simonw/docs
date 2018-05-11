@@ -12,9 +12,10 @@ import { InternalLink } from '../../../components/text/link'
 // prettier-ignore
 export default withDoc({
   title: 'Building a Slash Command for Slack',
+  description: 'Creating and hosting a slash-command for Slack with Now',
   date: '28 Feb 2017',
   authors: [leo],
-  editUrl: 'pages/docs/examples/chat.js',
+  editUrl: 'pages/docs/examples/slack-slash.js',
 })(markdown(components)`
 
 For most people in the web community, [Slack](https://slack.com/) has become an essential part of their everyday life. It has turned into a wonderful tool for sharing text, sending files around and building a community (a great example for this is [our public Slack team](https://zeit.chat/)).

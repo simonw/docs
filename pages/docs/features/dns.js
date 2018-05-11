@@ -9,6 +9,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'DNS Management',
+  description: 'Managing your DNS records for domains used with Now',
   date: '15 Mar 2017',
   authors: [hbp, leo],
   editUrl: 'pages/docs/features/dns.js',

@@ -8,6 +8,7 @@ import { Code } from '../../../components/text/code'
 // prettier-ignore
 export default withDoc({
   title: 'Deploying Docker Apps',
+  description: 'Docker apps with Now and all about the deployments',
   date: '09 March 2017',
   authors: [leo],
   editUrl: 'pages/docs/deployment-types/docker.js',

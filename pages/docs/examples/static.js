@@ -12,6 +12,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Building a Static Website',
+  description: 'Creating and deploying a static website with Now',
   date: '23 Feb 2017',
   authors: [leo],
   editUrl: 'pages/docs/examples/static.js',

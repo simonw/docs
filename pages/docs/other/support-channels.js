@@ -6,6 +6,7 @@ import { sergio } from '../../../lib/data/team'
 // prettier-ignore
 export default withDoc({
   title: 'Support Channels',
+  description: 'Finding help beyond documentation for ZEIT and Now',
   date: '21 Jul 2017',
   authors: [sergio],
   editUrl: 'pages/docs/other/support-channels.js',

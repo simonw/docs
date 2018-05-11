@@ -10,6 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Building a Single Page Application with Create React App',
+  description: 'Creating a single page web app with create-react-app and deploying it with Now',
   date: '23 Feb 2017',
   authors: [sergio],
   editUrl: 'pages/docs/examples/create-react-app.js',

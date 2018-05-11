@@ -13,6 +13,7 @@ import { rauchg, leo } from '../../../lib/data/team'
 // prettier-ignore
 export default withDoc({
   title: 'Configuring Now',
+  description: 'Configuring Now so that your deployments are exactly as you need them',
   date: '22 Feb 2017',
   authors: [rauchg, leo],
   editUrl: 'pages/docs/features/configuration.js',

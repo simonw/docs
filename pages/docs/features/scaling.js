@@ -11,6 +11,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Global Scaling',
+  description: 'Scaling your deployments to be instances in multiple global locations with Now',
   date: '01 Apr 2018',
   authors: [leo],
   editUrl: 'pages/docs/features/scaling.js',

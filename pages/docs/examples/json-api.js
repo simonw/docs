@@ -16,6 +16,7 @@ import {
 // prettier-ignore
 export default withDoc({
   title: 'Building a Basic JSON API',
+  description: 'Building a basic JSON API with Micro and deploying it with Now',
   date: '20 Feb 2017',
   authors: [leo],
   editUrl: 'pages/docs/examples/json-api.js',

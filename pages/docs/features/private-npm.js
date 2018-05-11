@@ -12,6 +12,7 @@ import Image from '../../../components/image'
 // prettier-ignore
 export default withDoc({
   title: 'Using Private npm Dependencies',
+  description: 'Granting permissions for your deployments to use private npm scopes ',
   date: '12 Mar 2017',
   authors: [rase, leo],
   editUrl: 'pages/docs/features/private-npm.js',

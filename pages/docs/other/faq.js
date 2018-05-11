@@ -9,6 +9,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Frequently Asked Questions',
+  description: 'The answers to our most frequently asked questions for Now and other ZEIT products and services',
   date: '30 Jan 2018',
   authors: [sergio],
   editUrl: 'pages/docs/other/faq.js',

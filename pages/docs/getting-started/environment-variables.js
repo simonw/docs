@@ -10,6 +10,7 @@ import Now from '../../../components/now/now'
 // prettier-ignore
 export default withDoc({
   title: 'Environment Variables',
+  description: 'Setting up environment variables to use in your deployed Now apps',
   date: '6 August 2017',
   authors: [arunoda],
   editUrl: 'pages/docs/getting-started/environment-variables.js',

@@ -8,6 +8,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Setting up a Redirect with Now',
+  description: 'Redirecting your Now deployed app using Now Alias or from within your app',
   date: '5 Nov 2017',
   authors: [sergio],
   editUrl: 'pages/docs/guides/redirect.js'

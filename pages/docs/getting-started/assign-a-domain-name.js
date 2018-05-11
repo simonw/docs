@@ -12,6 +12,7 @@ import Now from '../../../components/now/now'
 // prettier-ignore
 export default withDoc({
   title: 'Assign a Domain Name',
+  description: 'Using Now `alias` to assign a domain to your deployments',
   date: '2 August 2017',
   authors: [arunoda],
   editUrl: 'pages/docs/getting-started/assign-a-domain-name.js',

@@ -11,6 +11,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 // prettier-ignore
 export default withDoc({
   title: 'Environment Variables and Secrets',
+  description: 'Creating and using environment variables and creating and using secret environment variables in your Now deployments',
   date: '21 Feb 2017',
   authors: [leo],
   editUrl: 'pages/docs/features/env-and-secrets.js',
