@@ -222,7 +222,7 @@ class Head extends React.PureComponent {
               "dateModified": "${this.props.lastEdited
                 ? this.props.lastEdited.toISOString()
                 : null}",
-              "lastReviewed": ${this.props.lastEdited
+              "lastReviewed": "${this.props.lastEdited
                 ? this.props.lastEdited.toISOString()
                 : null}",
               "author": {
