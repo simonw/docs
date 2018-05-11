@@ -92,7 +92,12 @@ class API extends React.PureComponent {
 
     return (
       <Page dayBanner={false}>
-        <Head titlePrefix="" title={`ZEIT API`} />
+        <Head
+          titlePrefix=""
+          title={`Now API Documentation`}
+          titleSuffix=" - ZEIT"
+          description="A comprehensive guide to using the Now API and gaining control over the Now platform"
+        />
         <div className="header-wrapper">
           <div className="header">
             <BGContainer darkBg={true}>

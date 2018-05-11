@@ -50,7 +50,7 @@ class Head extends React.PureComponent {
     const titlePrefix =
       null != this.props.titlePrefix ? this.props.titlePrefix : 'ZEIT – '
     const titleSuffix =
-      null != this.props.titleSuffix ? this.props.titleSuffix : ' – ZEIT'
+      null != this.props.titleSuffix ? this.props.titleSuffix : ''
     const ogDescription = this.props.ogDescription || this.props.description
     const { darkBg } = this.context
     return (
@@ -219,8 +219,12 @@ class Head extends React.PureComponent {
                   this.props.title ||
                   'ZEIT Documentation') +
                 titleSuffix}",
-              "dateModified": "${this.props.lastEdited.toISOString()}",
-              "lastReviewed": "${this.props.lastEdited.toISOString()}",
+              "dateModified": "${this.props.lastEdited
+                ? this.props.lastEdited.toISOString()
+                : null}",
+              "lastReviewed": ${this.props.lastEdited
+                ? this.props.lastEdited.toISOString()
+                : null}",
               "author": {
                 "@type": "Person",
                 "name": "ZEIT"
