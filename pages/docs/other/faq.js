@@ -332,9 +332,11 @@ For custom requirements you can contact us at [enterprise@zeit.co](mailto:enterp
 
 We do not currently offer support for IPv6.
 
-## Does Now Block Outgoing SMTP Connections in Any Way?
+## Does Now Block Outgoing Connections in Any Way?
 
-Now does not block any incoming or outgoing requests.
+Inside Now deployments the ports 25 and 587 is blocked to avoid spam to be sent.
+
+Any other port is available for use.
 
 ## Can I Use a 3-D Secure credit card with ZEIT?
 
