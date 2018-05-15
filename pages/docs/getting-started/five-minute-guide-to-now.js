@@ -21,8 +21,8 @@ export default withDoc({
 With Now's help, you can deploy and publish any kind of web application (or service) in
 under five minutes.
 
-This guide will show you how to deploy such an app, connect it to a
-domain name of your choice and configure an SSL certificate.
+This quick-start guide will show you how to deploy an app, connect it to a
+domain name of your choice, and configure an SSL certificate.
 
 ## Installing Now Desktop
 
@@ -35,8 +35,8 @@ ${
 }
 
 The best way to get started with Now on your device
-is [Now Desktop](https://zeit.co/download), a minimal application
-that runs in your menubar and comes with the following features:
+is by downloading [Now Desktop](https://zeit.co/download), a minimal application
+that runs in your menu bar and comes with the following features:
 
 - Installs [Now CLI](https://zeit.co/download#command-line) and keeps it
 up to date automatically (the command line interface for interacting with Now).
@@ -46,7 +46,7 @@ on your account and teams that you've joined.
 simply dragging and dropping it onto its menubar icon or selecting
 it using a file picker.
 
-## Signing Up
+## Step 1: Signing Up
 
 Once you've downloaded [Now Desktop](https://zeit.co/download) open it and follow the
 instructions.
@@ -54,12 +54,12 @@ instructions.
 After you've completed the signup process (you can also use the form
 to log in), a window should open with your account's event feed inside.
 
-## Deployment
+## Step 2: Deploying a Static Site
 
 Now that we're logged in, let's begin with deploying a
-simple static web site.
+simple static website.
 
-Firstly, create a directory called \`my-web-app\` and add the following content to a file called \`index.html\`.
+First, create a directory called \`my-web-app\` and add the following content to a file called \`index.html\`:
 
 ${<Code>{`<!DOCTYPE html>
 <html>
@@ -70,11 +70,11 @@ ${<Code>{`<!DOCTYPE html>
 
 > You can also use a [Node.js app](https://github.com/zeit/nextgram) or an [app with a Dockerfile](https://github.com/now-examples/cobol-hello-world) instead of this simple static app.
 
-After you have added the content, visit the \`my-web-app\` directory using a terminal and run this command:
+After you have added the content, change to the \`my-web-app\` directory in your terminal and run this command:
 
 ${<TerminalInput>now</TerminalInput>}
 
-${<Now color="#000"/>} will deploy the app and give you a URL as shown below.
+${<Now color="#000"/>} will deploy the app and give you a URL as shown below:
 
 ${<Image
   src={asset(`${IMAGE_ASSETS_URL}/docs/five-minute-guide-to-now/deploy.png`)}
@@ -85,9 +85,9 @@ ${<Image
 
 This is a URL for the current deployment of the app. You can access this version of the app anytime with this URL.
 
-## Domain Name
+## Step 3: Configuring a Domain Name
 
-Now you have a unique URL(<https://my-web-app-avvuiuuwto.now.sh>) for your app. But you probably want a nicer-sounding URL before directing your users there. The next step is to map the "now.sh" URL to a domain name that you prefer.
+Now you have a unique URL(<https://my-web-app-avvuiuuwto.now.sh>) for your app. But you probably want a nicer-sounding URL to send your users to. The next step is to map the "now.sh" URL to a domain name that you prefer.
 
 Let's assume the domain name is \`my-web-app.com\`, and you haven't bought it yet. <br/>
 To map this domain name to the app's unique URL, run this command:
@@ -123,7 +123,7 @@ If you've made any changes to your app, you will need to deploy the latest versi
 
 ${<TerminalInput>now</TerminalInput>}
 
-You will receive a unique URL for this deployment. Let's assume that the new URL is <https://my-web-app-ttfxzqwbwz.now.sh>.
+You will receive a unique URL for this deployment. Let's assume the new URL is <https://my-web-app-ttfxzqwbwz.now.sh>.
 
 You can map this new URL to your domain name by running this command:
 
@@ -134,5 +134,5 @@ Your users can access the updated web app at <https://my-web-app.com>.
 
 ${<HR />}
 
-These are just a few things you can do with ${<Now color="#000"/>}. To learn more about ${<Now color="#000"/>}, simply follow the rest of the docs.
+These are just a few things you can do with ${<Now color="#000"/>}. To do more with ${<Now color="#000"/>}, follow the rest of the docs.
 `)
